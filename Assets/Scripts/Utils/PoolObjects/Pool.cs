@@ -18,7 +18,7 @@ public class Pool : MonoBehaviour
             return _instance;
         }
     }
-    public GameObject Get(GameObject go, Vector3 position)
+    public GameObject Get(GameObject go, Transform target)
     {
         var id = go.GetInstanceID();
         var queue = RequireQueue(id);
@@ -26,12 +26,12 @@ public class Pool : MonoBehaviour
         if (queue.Count > 0)
         {
             var pooledItem = queue.Dequeue();
-            pooledItem.transform.position = position;
+            pooledItem.transform.position = target.position;
             pooledItem.gameObject.SetActive(true);
-            pooledItem.Restart();
+            pooledItem.Restart(target);
             return pooledItem.gameObject;
         }
-        var instance = SpawnUtil.Spawn(go, position, gameObject.name);
+        var instance = SpawnUtil.Spawn(go, target.position, gameObject.name);
         var poolItem = instance.GetComponent<PoolItem>();
         poolItem.Retain(id, this);
 

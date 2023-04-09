@@ -12,7 +12,7 @@ public class SpawnComponent : MonoBehaviour
     public void Spawn()
     {
         GameObject instance = _usePool ?
-            Pool.Instance.Get(_prefab, _target.position) :
+            Pool.Instance.Get(_prefab, _target) :
             SpawnUtil.Spawn(_prefab, _target.position);
 
         instance.transform.localScale = _target.lossyScale;
