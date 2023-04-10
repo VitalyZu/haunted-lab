@@ -10,16 +10,21 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _jumpSpeed;
     [Header("Check")]
     [SerializeField] private LayerCheck _groundCheck;
+    [Header("Spawners")]
+    [SerializeField] private SpawnComponent _bulletSpawer;
+    [SerializeField] private SpawnComponent _casingSpawer;
 
     private Vector2 _direction;
     private Rigidbody2D _rb;
     private Animator _animator;
     private bool _isGrounded;
     private bool _isJumping;
+    private bool _isFiring = false;
 
     private static readonly int runningKey = Animator.StringToHash("running");
     private static readonly int verticalVelocityKey = Animator.StringToHash("vertical-velocity");
     private static readonly int groundKey = Animator.StringToHash("ground");
+    private static readonly int fireKey = Animator.StringToHash("fire");
 
     private void Awake()
     {
@@ -35,13 +40,18 @@ public class Hero : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float xVelocity = _direction.x * _speed;
-        float yVelocity = CalculateYVelocity();
+        if (!_isFiring)
+        {
+            float xVelocity = _direction.x * _speed;
+            float yVelocity = CalculateYVelocity();
 
-        _rb.velocity = new Vector2(xVelocity, yVelocity);
+            _rb.velocity = new Vector2(xVelocity, yVelocity);
 
-        if(_direction.x != 0) SetSpriteDirection(_direction);
-
+            if (_direction.x != 0) SetSpriteDirection(_direction);
+        }
+        else {
+            _rb.velocity = Vector2.zero;
+        }
         float velocityForAnimator = _rb.velocity.y;
 
         //if (_rb.velocity.y > -0.9) velocityForAnimator = 0;
@@ -94,10 +104,26 @@ public class Hero : MonoBehaviour
         }
     }
 
-    internal void SetDirection(Vector2 direction)
+    public void SetDirection(Vector2 direction)
     {
         _direction = direction;
     }
 
-
+    public void Fire()
+    {
+        if (!_isFiring && _rb.velocity.y == 0)
+        {
+            _isFiring = true;
+            _animator.SetTrigger(fireKey);
+        }
+    }
+    private void SetFireState()
+    {
+        _isFiring = false;
+    }
+    public void BulletSpawn()
+    {
+        _bulletSpawer.Spawn();
+        _casingSpawer.Spawn();
+    }
 }

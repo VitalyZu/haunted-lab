@@ -12,4 +12,12 @@ public class HeroInput : MonoBehaviour
         Vector2 direction = context.ReadValue<Vector2>();
         _hero.SetDirection(direction);
     }
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.Fire();
+        }
+    }
 }
