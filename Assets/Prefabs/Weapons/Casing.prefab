@@ -148,3 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _forceDirection: {x: 0.2, y: 0.3}
+  _rb: {fileID: 870838522620948084}
+  _sprite: {fileID: 870838522620948086}

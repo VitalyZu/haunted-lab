@@ -35,7 +35,6 @@ public class Hero : MonoBehaviour
     private void Update()
     {
         _isGrounded = _groundCheck.IsTouchingLayer;
-        Debug.Log(_isGrounded);
     }
 
     private void FixedUpdate()

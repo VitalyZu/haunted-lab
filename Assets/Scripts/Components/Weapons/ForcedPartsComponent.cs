@@ -6,6 +6,8 @@ public class ForcedPartsComponent : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Vector2 _forceDirection;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private SpriteRenderer _sprite;
 
     private Rigidbody2D Rigidbody;
     private SpriteRenderer SpriteRender;
@@ -14,11 +16,12 @@ public class ForcedPartsComponent : MonoBehaviour
     public void Start()
     {
         Direction = transform.lossyScale.x > 0 ? -1 : 1;
-        Rigidbody = GetComponent<Rigidbody2D>();
-        SpriteRender = GetComponent<SpriteRenderer>();
+        
         float color = Random.Range(0.8f, 1f);
-        SpriteRender.color = new Color(color, color, color);
+        _sprite.color = new Color(color, color, color);
+        
         var force = _forceDirection * _speed;
-        Rigidbody.AddForce(new Vector2((force.x + Random.Range(0f, 0.05f)) * Direction, force.y + Random.Range(0f, 0.05f)), ForceMode2D.Impulse);
+        
+        _rb.AddForce(new Vector2((force.x + Random.Range(0f, 0.05f)) * Direction, force.y + Random.Range(0f, 0.05f)), ForceMode2D.Impulse);
     }
 }
