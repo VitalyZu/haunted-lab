@@ -14,13 +14,20 @@ public class Creature : MonoBehaviour
     protected Rigidbody2D _rb;
     protected Animator _animator;
     private Vector2 _direction;
+    protected int _pushDirection;
+    private float _pushDuration = 0.2f;
+    
     private bool _isAttack = false;
     private bool _isGrounded;
     private bool _isJumping;
+    private bool _isHit;
+
+    private Coroutine _hitCoroutine;
 
     private static readonly int runningKey = Animator.StringToHash("running");
     private static readonly int verticalVelocityKey = Animator.StringToHash("vertical-velocity");
     private static readonly int groundKey = Animator.StringToHash("ground");
+
     private static readonly int fireKey = Animator.StringToHash("fire");
 
     private void Awake()
@@ -37,7 +44,6 @@ public class Creature : MonoBehaviour
 
     private float CalculateJumpVelocity(float velocity)
     {
-
         if (_isGrounded)
         {
             velocity += _jumpSpeed;
@@ -50,7 +56,7 @@ public class Creature : MonoBehaviour
     {
         if (!_isAttack)
         {
-            float xVelocity = _direction.x * _speed;
+            float xVelocity = !_isHit ? _direction.x * _speed * Random.Range(0, 2f) : _pushDirection * Random.Range(0, 5f);
             float yVelocity = CalculateYVelocity();
 
             _rb.velocity = new Vector2(xVelocity, yVelocity);
@@ -61,14 +67,12 @@ public class Creature : MonoBehaviour
         {
             _rb.velocity = Vector2.zero;
         }
-        float velocityForAnimator = _rb.velocity.y;
 
-        //if (_rb.velocity.y > -0.9) velocityForAnimator = 0;
+        float velocityForAnimator = _rb.velocity.y;
 
         _animator.SetBool(groundKey, _isGrounded);
         _animator.SetFloat(verticalVelocityKey, velocityForAnimator);
         _animator.SetBool(runningKey, _direction.x != 0);
-
     }
 
     private float CalculateYVelocity()
@@ -118,5 +122,23 @@ public class Creature : MonoBehaviour
     private void SetFireState()
     {
         _isAttack = false;
+    }
+
+    public void PushSelf(int direction)
+    {
+        _pushDirection = direction;
+        _isHit = true;
+        //
+        _rb.velocity = new Vector2(direction, _rb.velocity.y);
+        //
+        if(_hitCoroutine != null) StopCoroutine(_hitCoroutine);
+        _hitCoroutine = StartCoroutine(HitCoroutine());
+    }
+
+    private IEnumerator HitCoroutine()
+    {
+        yield return new WaitForSeconds(_pushDuration);
+        _isHit = false;
+        _hitCoroutine = null;
     }
 }

@@ -17,7 +17,6 @@ public class ZombieComponent : Creature
 
         var velocity = _rb.velocity.x;
         var direction = velocity > 0 ? 1 : -1;
-
         if (velocity == 0)
         {
             rotationVector = new Vector3(0f, 0f, -72f);

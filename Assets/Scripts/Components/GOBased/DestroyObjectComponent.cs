@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyObjectComponent : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObject;
+    [SerializeField] private float _destroyAfterSec = 0f;
     public void DestroySelf()
     {
         if (_gameObject != null)
@@ -13,5 +14,14 @@ public class DestroyObjectComponent : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    public void DestroyByParticle()
+    {
+        var parent = _gameObject.transform.parent;
+        _gameObject.transform.parent = null;
+        
+        Destroy(_gameObject, _destroyAfterSec);
+        Destroy(parent.gameObject);
     }
 }

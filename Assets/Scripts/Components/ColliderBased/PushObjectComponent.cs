@@ -5,27 +5,27 @@ using UnityEngine;
 public class PushObjectComponent : MonoBehaviour
 {
     [SerializeField] float _force;
-    private static Dictionary<int, Rigidbody2D> _rbs = new Dictionary<int, Rigidbody2D>();
+    private static Dictionary<int, Creature> _creatues = new Dictionary<int, Creature>();
     public void PushTarget(GameObject target)
     {
+        Debug.Log("Push Target");
         var id = target.GetInstanceID();
         var direction = GetDirection(target);
-        var force = new Vector2(_force * direction, 1f);
+        //var force = new Vector2(_force * direction, 1f);
 
-        Rigidbody2D targetRB;
-        if (_rbs.TryGetValue(id, out targetRB))
+        Creature creature;
+        if (_creatues.TryGetValue(id, out creature))
         {
-            
-            targetRB.AddForce(force, ForceMode2D.Impulse);
+            creature.PushSelf(direction);
         }
         else
         {
-            Debug.Log("Capture RB");
-            Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            //Debug.Log("Capture Creature");
+            creature = target.GetComponent<Creature>();
+            if (creature != null)
             {
-                rb.AddForce(force, ForceMode2D.Impulse);
-                _rbs.Add(id, rb);
+                creature.PushSelf(direction);
+                _creatues.Add(id, creature);
             }
         }
     }

@@ -179,6 +179,7 @@ MonoBehaviour:
   _tags:
   - Ground
   - Enemy
+  _isSingleTrigger: 1
   _onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -260,4 +261,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32167c7a6ceac4aaea594fc1089730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 1
+  _force: 10
