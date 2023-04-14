@@ -56,7 +56,7 @@ public class Creature : MonoBehaviour
     {
         if (!_isAttack)
         {
-            float xVelocity = !_isHit ? _direction.x * _speed * Random.Range(0, 2f) : _pushDirection * Random.Range(0, 5f);
+            float xVelocity = !_isHit ? _direction.x * _speed: _pushDirection * Random.Range(0, 5f);
             float yVelocity = CalculateYVelocity();
 
             _rb.velocity = new Vector2(xVelocity, yVelocity);
