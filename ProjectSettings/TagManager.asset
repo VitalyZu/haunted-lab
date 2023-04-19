@@ -50,3 +50,6 @@ TagManager:
   - name: Trash
     uniqueID: 3572164627
     locked: 0
+  - name: Blood
+    uniqueID: 53750655
+    locked: 0

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
-    [SerializeField] GameObject _target;
+    //[SerializeField] GameObject _target;
     [SerializeField] LayerCheck _attackRange;
 
     private Creature _creature;
     private IEnumerator _routine;
+    private static GameObject _target;
 
     private void Awake()
     {
         _creature = GetComponent<Creature>();
+        if (_target == null)
+            _target = FindObjectOfType<Hero>().gameObject;
     }
 
     private void Start()
