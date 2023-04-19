@@ -17,7 +17,7 @@ public class HeroInput : MonoBehaviour
     {
         if (context.performed)
         {
-            _hero.Fire();
+            _hero.Attack();
         }
     }
 }

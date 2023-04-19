@@ -5,6 +5,9 @@ using UnityEngine;
 public class ZombieComponent : Creature
 {
     [SerializeField] ParticleSystem _hitParticle;
+    [SerializeField] CheckCircleOverlap _attackCheck;
+    [SerializeField] LayerCheck _attackLayerCheck;
+
 
     public void PlayHitParticle()
     {
@@ -27,5 +30,10 @@ public class ZombieComponent : Creature
         _hitParticle.gameObject.transform.localScale = new Vector3(direction, 1f, 1f);
         _hitParticle.gameObject.SetActive(true);
         _hitParticle.Play();       
+    }
+
+    public void MakeAttack()
+    {
+        _attackCheck.Check();
     }
 }

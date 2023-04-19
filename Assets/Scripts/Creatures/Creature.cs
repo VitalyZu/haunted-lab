@@ -7,6 +7,7 @@ public class Creature : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
+    [SerializeField] private float _damageJumpSpeed;
     [Header("Check")]
     [SerializeField] private LayerCheck _groundCheck;
     [Header("Spawners")]
@@ -27,8 +28,8 @@ public class Creature : MonoBehaviour
     private static readonly int runningKey = Animator.StringToHash("running");
     private static readonly int verticalVelocityKey = Animator.StringToHash("vertical-velocity");
     private static readonly int groundKey = Animator.StringToHash("ground");
-
-    private static readonly int fireKey = Animator.StringToHash("fire");
+    private static readonly int attackKey = Animator.StringToHash("attack");
+    private static readonly int hitKey = Animator.StringToHash("hit");
 
     private void Awake()
     {
@@ -54,11 +55,16 @@ public class Creature : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_isAttack)
+        if (!_isAttack || _isHit)
         {
-            float xVelocity = !_isHit ? _direction.x * _speed: _pushDirection * Random.Range(0, 5f);
+            var speed = _direction.x * _speed;
+            float xVelocity = !_isHit ? 
+                speed : 
+                _pushDirection != 0 ? 
+                _pushDirection * Random.Range(0, 5f) :
+                speed;
             float yVelocity = CalculateYVelocity();
-
+            
             _rb.velocity = new Vector2(xVelocity, yVelocity);
 
             if (_direction.x != 0) SetSpriteDirection(_direction);
@@ -111,15 +117,15 @@ public class Creature : MonoBehaviour
         _direction = direction;
     }
 
-    public void Fire()
+    public void Attack()
     {
         if (!_isAttack && _rb.velocity.y == 0)
         {
             _isAttack = true;
-            _animator.SetTrigger(fireKey);
+            _animator.SetTrigger(attackKey);
         }
     }
-    private void SetFireState()
+    public void SetFireStateFalse()
     {
         _isAttack = false;
     }
@@ -140,5 +146,17 @@ public class Creature : MonoBehaviour
         yield return new WaitForSeconds(_pushDuration);
         _isHit = false;
         _hitCoroutine = null;
+    }
+
+    public virtual void GetDamage()
+    {
+        _isHit = true;
+        _rb.velocity = new Vector2(_rb.velocity.x, _damageJumpSpeed);
+        _animator.SetTrigger(hitKey);
+    }
+
+    public void EndHit()
+    { 
+        
     }
 }

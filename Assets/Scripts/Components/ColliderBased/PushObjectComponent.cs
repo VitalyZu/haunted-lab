@@ -20,7 +20,6 @@ public class PushObjectComponent : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Capture Creature");
             creature = target.GetComponent<Creature>();
             if (creature != null)
             {
@@ -32,6 +31,8 @@ public class PushObjectComponent : MonoBehaviour
 
     private int GetDirection(GameObject target)
     {
+        Debug.Log(gameObject.transform.position.x);
+        Debug.Log(target.transform.position.x);
         return gameObject.transform.position.x > target.transform.position.x ? -1 : 1;
     }
 }
