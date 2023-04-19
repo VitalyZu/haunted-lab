@@ -21,25 +21,25 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 23c1e7880bc6d0a4293b04e2e3d7d105, type: 3}
-    - time: 0.02
-      value: {fileID: 21300000, guid: e8f52ead7a1eedc48a2cc27fb2ddfd8e, type: 3}
-    - time: 0.04
-      value: {fileID: 21300000, guid: eb9f03544e6e93b4d828e78805a5d8a7, type: 3}
-    - time: 0.06
-      value: {fileID: 21300000, guid: 22395c69c2744854d8dc31d7a94f0d50, type: 3}
-    - time: 0.08
-      value: {fileID: 21300000, guid: 3ace08c3042007d4b997ee01502753ef, type: 3}
     - time: 0.1
+      value: {fileID: 21300000, guid: e8f52ead7a1eedc48a2cc27fb2ddfd8e, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: eb9f03544e6e93b4d828e78805a5d8a7, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 22395c69c2744854d8dc31d7a94f0d50, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 3ace08c3042007d4b997ee01502753ef, type: 3}
+    - time: 0.5
       value: {fileID: 21300000, guid: 39ae6d276d0c7414885a96cf7ed1e73c, type: 3}
-    - time: 0.12
+    - time: 0.6
       value: {fileID: 21300000, guid: 111154fa7d9aced48b2d86609c95d5ff, type: 3}
-    - time: 0.14
+    - time: 0.7
       value: {fileID: 21300000, guid: 400da96d5f3d29c42984d3c4f9ccda18, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 50
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,15 +87,15 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.06
+  - time: 0.3
     functionName: BulletSpawn
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.14
-    functionName: SetFireState
+  - time: 0.7
+    functionName: SetFireStateFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
