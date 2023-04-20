@@ -510,12 +510,14 @@ MonoBehaviour:
     _enemiesSwpawnDelay: 0.3
     _types:
     - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
+    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
   - _point: {fileID: 443633743}
     _number: 10
     _startTime: 10
     _enemiesSwpawnDelay: 0.5
     _types:
     - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
+    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
 --- !u!4 &308266380
 Transform:
   m_ObjectHideFlags: 0
