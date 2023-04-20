@@ -20,18 +20,40 @@ public class ZombieSpawnerComponent : MonoBehaviour
         {
             var prefabIndex = (int)Mathf.Repeat(i, types.Length);
             var prefab = types[prefabIndex];
-            //
-            var renderer = prefab.GetComponent<SpriteRenderer>();
-            var currentOrder = renderer.sortingOrder;
-            if (currentOrder <= _spawnManager.LayerOrder)
-            {
-                _spawnManager.LayerOrder++;
-                var order = _spawnManager.LayerOrder;
-                renderer.sortingOrder = order;
-            }
-            //
-            SpawnUtil.Spawn(prefab, transform.position);
+            
+            var instance = SpawnUtil.Spawn(prefab, transform.position);
+            RandomizeInstance(instance);
+
             yield return new WaitForSeconds(delay);
         }
+    }
+
+    private void RandomizeInstance(GameObject instance)
+    {
+        var renderer = instance.GetComponent<SpriteRenderer>();
+        SetLayerOrder(renderer);
+        ChangeColor(renderer);
+        ChangeSize(instance);
+    }
+
+    private void SetLayerOrder(SpriteRenderer renderer)
+    {
+        var currentOrder = renderer.sortingOrder;
+        if (currentOrder <= _spawnManager.LayerOrder)
+        {
+            _spawnManager.LayerOrder++;
+            var order = _spawnManager.LayerOrder;
+            renderer.sortingOrder = order;
+        }
+    }
+
+    private void ChangeColor(SpriteRenderer renderer)
+    {
+        renderer.color = new Color(Random.Range(0.8f, 1f), Random.Range(0.8f, 1f), Random.Range(0.8f, 1f));
+    }
+
+    private void ChangeSize(GameObject instance)
+    {
+        instance.transform.localScale = new Vector3(Random.Range(0.8f, 1.2f), Random.Range(0.8f, 1.2f), 1f);
     }
 }
