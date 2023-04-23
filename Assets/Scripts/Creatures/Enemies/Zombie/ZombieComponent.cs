@@ -7,7 +7,7 @@ public class ZombieComponent : Creature
     [SerializeField] ParticleSystem _hitParticle;
     [SerializeField] CheckCircleOverlap _attackCheck;
     [SerializeField] LayerCheck _attackLayerCheck;
-
+    [SerializeField] SpawnListComponent _spawnListComponent;
 
     public void PlayHitParticle()
     {

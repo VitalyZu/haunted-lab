@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1435672331439412151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6145728745210590408}
+  - component: {fileID: 6386301908556866234}
+  m_Layer: 9
+  m_Name: CoinSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6145728745210590408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435672331439412151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.121, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3064637048336944082}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6386301908556866234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435672331439412151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6145728745210590408}
+  _prefab: {fileID: 1317128813503371358, guid: a418f6b749875c14da633745ba20f23a, type: 3}
+  _usePool: 1
 --- !u!1 &3064637048336944085
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,6 +67,7 @@ GameObject:
   - component: {fileID: 3064637048336944075}
   - component: {fileID: 3064637048336944074}
   - component: {fileID: 7259262949576840318}
+  - component: {fileID: -3966353723085928467}
   m_Layer: 9
   m_Name: Zombie-1
   m_TagString: Enemy
@@ -42,6 +90,7 @@ Transform:
   - {fileID: 3064637049934028573}
   - {fileID: 3064637049639551664}
   - {fileID: 3064637049805024932}
+  - {fileID: 6145728745210590408}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -219,6 +268,7 @@ MonoBehaviour:
   _hitParticle: {fileID: 3064637049934028571}
   _attackCheck: {fileID: 3064637049805024931}
   _attackLayerCheck: {fileID: 3064637049805024934}
+  _spawnListComponent: {fileID: 0}
 --- !u!114 &3064637048336944081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,16 +324,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7259262949576840318}
-        m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
+      - m_Target: {fileID: -3966353723085928467}
+        m_TargetAssemblyTypeName: SpawnListComponent, Assembly-CSharp
         m_MethodName: Spawn
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: deadparts
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3966353723085928467}
+        m_TargetAssemblyTypeName: SpawnListComponent, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: coin
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3064637048336944075
@@ -327,6 +389,25 @@ MonoBehaviour:
   _target: {fileID: 3064637048336944082}
   _prefab: {fileID: 799044803729021139, guid: a2fce3d52e31f6441b2a45b36f35ff6d, type: 3}
   _usePool: 0
+--- !u!114 &-3966353723085928467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064637048336944085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e2807af7bd5994c8409544d578fc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: deadparts
+    spawnComponent: {fileID: 7259262949576840318}
+  - Id: 
+    spawnComponent: {fileID: 0}
+  - Id: coin
+    spawnComponent: {fileID: 6386301908556866234}
 --- !u!1 &3064637049639551667
 GameObject:
   m_ObjectHideFlags: 0
