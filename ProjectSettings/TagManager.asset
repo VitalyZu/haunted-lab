@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - Player
   - Deadparts
-  - 
+  - Items
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
     locked: 0
   - name: Blood
     uniqueID: 53750655
+    locked: 0
+  - name: Items
+    uniqueID: 3961503079
     locked: 0

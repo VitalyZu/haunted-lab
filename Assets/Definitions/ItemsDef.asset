@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ItemsDef
   m_EditorClassIdentifier: 
   _items:
-  - _id: money
+  - _id: coin
     _icon: {fileID: 0}
