@@ -6,8 +6,10 @@ using UnityEngine;
 public class DefFacade : ScriptableObject
 {
     [SerializeField] private PlayerDef _playerFacade;
+    [SerializeField] private ItemsDef _itemsFacade;
 
     public PlayerDef Player => _playerFacade;
+    public ItemsDef Items => _itemsFacade;
 
     private static DefFacade _instance;
     public static DefFacade I => _instance == null ? Load() : _instance;
