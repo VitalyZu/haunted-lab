@@ -20,4 +20,12 @@ public class HeroInput : MonoBehaviour
             _hero.Attack();
         }
     }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.Interact();
+        }
+    }
 }

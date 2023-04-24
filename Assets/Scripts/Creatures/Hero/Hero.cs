@@ -7,6 +7,7 @@ public class Hero : Creature
 {
     [SerializeField] private SpawnComponent _bulletSpawer;
     [SerializeField] private SpawnComponent _casingSpawer;
+    [SerializeField] private CheckCircleOverlap _intercationCheck;
 
     private GameSession _gameSession;
 
@@ -31,5 +32,10 @@ public class Hero : Creature
     private void OnInventoryChange(string arg0, int arg1)
     {
         Debug.Log("CHANGED");
+    }
+
+    public void Interact()
+    {
+        _intercationCheck.Check();
     }
 }

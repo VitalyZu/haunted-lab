@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -34,6 +35,14 @@ public class CheckCircleOverlap : MonoBehaviour
             if (isCompare) _onOverlap?.Invoke(_interactResult[i].gameObject);
         }
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = new Color(1f, 1f, 1f, 0.45f);
+        Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
+    }
+#endif
 }
 
 [Serializable]
