@@ -22,7 +22,7 @@ public class Pool : MonoBehaviour
     {
         var id = go.GetInstanceID();
         var queue = RequireQueue(id);
-        Debug.Log(id + "  asd");
+
         if (queue.Count > 0)
         {
             var pooledItem = queue.Dequeue();

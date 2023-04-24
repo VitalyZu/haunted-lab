@@ -17,6 +17,5 @@ public class AddToPool : MonoBehaviour
         gameObject.transform.parent = pool.GetComponent<Transform>();
         gameObject.transform.position = position;
         */
-        Debug.Log(_prefab.GetInstanceID());
     }
 }

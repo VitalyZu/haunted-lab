@@ -490,7 +490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &308266379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: coin
-        Value: 5
+        Value: 0
 --- !u!4 &474499303
 Transform:
   m_ObjectHideFlags: 0
