@@ -48,6 +48,9 @@ TagManager:
   - name: Creatures
     uniqueID: 727335567
     locked: 0
+  - name: Deadparts
+    uniqueID: 45146507
+    locked: 0
   - name: Trash
     uniqueID: 3572164627
     locked: 0

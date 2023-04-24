@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startName: 
-  _frameRate: 10
+  _frameRate: 20
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

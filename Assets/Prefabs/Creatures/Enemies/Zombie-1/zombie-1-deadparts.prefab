@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 45146507
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b27d90d6b1dea634eb31cec783c87140, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5098,7 +5098,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 53750655
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5306,6 +5306,8 @@ GameObject:
   - component: {fileID: 8008118524379440459}
   - component: {fileID: 2512070163547444440}
   - component: {fileID: 757002357770516592}
+  - component: {fileID: 2127318510514780402}
+  - component: {fileID: 1706973013206554379}
   m_Layer: 7
   m_Name: zombie-3
   m_TagString: Untagged
@@ -5451,6 +5453,35 @@ CircleCollider2D:
   m_Offset: {x: 0.035233352, y: 0.054613758}
   serializedVersion: 2
   m_Radius: 0.15096898
+--- !u!114 &2127318510514780402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191339807170195241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe32167c7a6ceac4aaea594fc1089730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _force: 0
+--- !u!114 &1706973013206554379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191339807170195241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e401f68fe697b4ea77af5645281031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
+  _forceDirection: {x: 0.7, y: 0.5}
+  _rb: {fileID: 8008118524379440459}
+  _sprite: {fileID: 8354698399723493533}
 --- !u!1 &8675395256909315362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,7 +5495,7 @@ GameObject:
   - component: {fileID: 3500946233962712337}
   - component: {fileID: 592327828318698458}
   - component: {fileID: 4218259409201241083}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: zombie-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5524,8 +5555,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 45146507
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f9993675665215c4eaea092d2f1a05d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
