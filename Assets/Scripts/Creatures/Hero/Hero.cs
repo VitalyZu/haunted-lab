@@ -38,4 +38,9 @@ public class Hero : Creature
     {
         _intercationCheck.Check();
     }
+
+    private void OnDestroy()
+    {
+        _gameSession.Data.Inventory.OnChange -= OnInventoryChange;
+    }
 }

@@ -1881,6 +1881,7 @@ GameObject:
   - component: {fileID: 2080804465}
   - component: {fileID: 2080804464}
   - component: {fileID: 2080804469}
+  - component: {fileID: 2080804470}
   m_Layer: 0
   m_Name: pixel
   m_TagString: Interactable
@@ -2053,9 +2054,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2080804470}
+        m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFail:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2080804470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080804463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2080804468}
+  _prefab: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
+  _usePool: 0
 --- !u!1001 &5043696773556060107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2106,6 +2134,10 @@ PrefabInstance:
     - target: {fileID: 5043696773627288465, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043696773627288471, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
+      propertyPath: _health
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_Name
