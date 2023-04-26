@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Guard : MonoBehaviour
 {
     [SerializeField] private LayerCheck _vision;
+    [SerializeField] private LayerMask _prevMask;
     [SerializeField] float _agroTime = .5f;
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] SpawnComponent _bullet;
@@ -23,6 +25,9 @@ public class Guard : MonoBehaviour
 
     public void OnEnterVision(GameObject target)
     {
+        var obstacle = CheckObstacles(target);
+        if (obstacle) return;
+
         if (_currentTarget == null)
         {
             _currentTarget = target;
@@ -30,6 +35,14 @@ public class Guard : MonoBehaviour
             if (_coroutine != null) StopCoroutine(_coroutine);
             _coroutine = StartCoroutine(Attack());
         }
+    }
+
+    private bool CheckObstacles(GameObject target)
+    {
+        var direction = target.transform.position - transform.position;
+        RaycastHit2D[] result = new RaycastHit2D[1];
+        Physics2D.RaycastNonAlloc(transform.position, Vector2.right * Mathf.Sign(direction.x), result, 5f, _prevMask);
+        return result[0].collider != null;
     }
 
     private void SetDirection()

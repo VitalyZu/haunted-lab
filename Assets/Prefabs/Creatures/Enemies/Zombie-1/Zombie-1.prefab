@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 9216
+    m_Bits: 25600
 --- !u!114 &3064637049805024931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +572,7 @@ MonoBehaviour:
   _tags:
   - Hero
   - Ally
+  - Ally-props
 --- !u!114 &3064637049805024930
 MonoBehaviour:
   m_ObjectHideFlags: 0

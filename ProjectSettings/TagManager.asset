@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Interactable
   - Ally
+  - Ally-props
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Deadparts
   - Items
   - Ally
-  - 
+  - Ally-props
   - 
   - 
   - 
