@@ -827,9 +827,10 @@ GameObject:
   - component: {fileID: 550640967}
   - component: {fileID: 550640966}
   - component: {fileID: 550640968}
+  - component: {fileID: 550640969}
   m_Layer: 0
   m_Name: Door-spawner
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,6 +891,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: close
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 550640963}
+          m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
+          m_MethodName: SetAnimationByName
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: idle
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!212 &550640964
@@ -974,7 +987,7 @@ MonoBehaviour:
   _required:
   - Id: coin
     Value: 2
-  _removeAfterUse: 1
+  _removeAfterUse: 0
   _onSucces:
     m_PersistentCalls:
       m_Calls:
@@ -1008,7 +1021,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2135672084}
+      - m_Target: {fileID: 550640966}
         m_TargetAssemblyTypeName: RequireItemComponent, Assembly-CSharp
         m_MethodName: Check
         m_Mode: 1
@@ -1046,6 +1059,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &550640969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4be78bf80956f479f47791c83fcc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObject: {fileID: 0}
+  _destroyAfterSec: 0
 --- !u!1001 &709063879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2218,7 +2245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2080804464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,7 +2716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5043696773627288465, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46
+      value: 2.634
       objectReference: {fileID: 0}
     - target: {fileID: 5043696773627288465, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_LocalPosition.y
