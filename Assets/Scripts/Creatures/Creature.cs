@@ -37,7 +37,6 @@ public class Creature : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-
     private void Update()
     {
         _isGrounded = _groundCheck.IsTouchingLayer;
@@ -75,7 +74,7 @@ public class Creature : MonoBehaviour
         }
 
         float velocityForAnimator = _rb.velocity.y;
-
+        
         _animator.SetBool(groundKey, _isGrounded);
         _animator.SetFloat(verticalVelocityKey, velocityForAnimator);
         _animator.SetBool(runningKey, _direction.x != 0);
@@ -156,7 +155,7 @@ public class Creature : MonoBehaviour
     }
 
     public void EndHit()
-    { 
-        
+    {
+        _isHit = false;
     }
 }

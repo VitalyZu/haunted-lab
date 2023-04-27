@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpSpeed: 16
-  _damageJumpSpeed: 30
+  _damageJumpSpeed: 10
   _groundCheck: {fileID: 1164582304}
   _bulletSpawer: {fileID: 1528996994}
   _casingSpawer: {fileID: 788353025}
@@ -813,6 +813,239 @@ MonoBehaviour:
   _OnChangeAnimatorEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &550640962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550640965}
+  - component: {fileID: 550640964}
+  - component: {fileID: 550640963}
+  - component: {fileID: 550640967}
+  - component: {fileID: 550640966}
+  - component: {fileID: 550640968}
+  m_Layer: 0
+  m_Name: Door-spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &550640963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc4cbbf6c4ec464e9e973ca4bc3a5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startName: idle
+  _frameRate: 10
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  _isParticle: 0
+  _animationsClip:
+  - name: idle
+    loop: 1
+    sprites:
+    - {fileID: 21300000, guid: 673d421465fde4742b7ed35d4f620214, type: 3}
+    - {fileID: 21300000, guid: 71a1d6b60886d2f439b2473c3c3b2daa, type: 3}
+    allowNext: 0
+    onAnimationComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: activate
+    loop: 0
+    sprites:
+    - {fileID: 21300000, guid: d4e2f4dbf61b60d40aaa8105ed71b9d6, type: 3}
+    - {fileID: 21300000, guid: 3f95e0aba36672f428e49604118f9288, type: 3}
+    - {fileID: 21300000, guid: 438ee7836554bcd4ab1b0e053f410aca, type: 3}
+    - {fileID: 21300000, guid: 37762fcc78228174ead6e194738b887a, type: 3}
+    - {fileID: 21300000, guid: 10024f8dc0575c2448df488a6a422b35, type: 3}
+    - {fileID: 21300000, guid: 297822d483ce0664eb3bd813990beafd, type: 3}
+    - {fileID: 21300000, guid: c5f017c8506f53a48ac59a7e76fa69dc, type: 3}
+    - {fileID: 21300000, guid: a5e6722ecde353c42af8271b27a593f1, type: 3}
+    - {fileID: 21300000, guid: 9d48b71668702be42b8ecdfb455d5102, type: 3}
+    - {fileID: 21300000, guid: e0a566ed03b8f0749a473d203566468c, type: 3}
+    - {fileID: 21300000, guid: b0b8f3de1f23da048ad346b9b000ca40, type: 3}
+    allowNext: 0
+    onAnimationComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 531640675}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: close
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!212 &550640964
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 673d421465fde4742b7ed35d4f620214, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &550640965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7462905, y: -0.4935069, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550640966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f933d63203a5747a46e4a1f6dc05b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _required:
+  - Id: coin
+    Value: 2
+  _removeAfterUse: 1
+  _onSucces:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 550640963}
+        m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetAnimationByName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: activate
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onFail:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &550640967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245fc6f2aa03bda438f2a8f8043fdd17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2135672084}
+        m_TargetAssemblyTypeName: RequireItemComponent, Assembly-CSharp
+        m_MethodName: Check
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!61 &550640968
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550640962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &709063879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -826,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7196358750163076839, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
       propertyPath: m_RootOrder
@@ -1882,7 +2115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
@@ -2258,7 +2491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2135672084
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class PushObjectComponent : MonoBehaviour
     private static Dictionary<int, Creature> _creatues = new Dictionary<int, Creature>();
     public void PushTarget(GameObject target)
     {
-        Debug.Log("Push Target");
         var id = target.GetInstanceID();
         var direction = GetDirection(target);
         //var force = new Vector2(_force * direction, 1f);
