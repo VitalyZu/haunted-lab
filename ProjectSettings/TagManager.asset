@@ -10,6 +10,7 @@ TagManager:
   - Interactable
   - Ally
   - Ally-props
+  - Projectile
   layers:
   - Default
   - TransparentFX

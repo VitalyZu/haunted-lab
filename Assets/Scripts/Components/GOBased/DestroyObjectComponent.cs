@@ -22,6 +22,11 @@ public class DestroyObjectComponent : MonoBehaviour
         _gameObject.transform.parent = null;
         
         Destroy(_gameObject, _destroyAfterSec);
-        Destroy(parent.gameObject);
+        if(parent != null) Destroy(parent.gameObject);
+    }
+
+    public void DestroyObject(GameObject target)
+    {
+        Destroy(target);
     }
 }

@@ -12,7 +12,6 @@ public class PoolItem : MonoBehaviour
 
     public void Retain(int id, Pool pool)
     {
-        Debug.Log(id);
         _id = id;
         _pool = pool;
     }

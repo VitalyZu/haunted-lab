@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -2529809354197508291}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   _tags:
   - Ground
   - Enemy
+  - Ally-props
   _isSingleTrigger: 1
   _onEnter:
     m_PersistentCalls:
