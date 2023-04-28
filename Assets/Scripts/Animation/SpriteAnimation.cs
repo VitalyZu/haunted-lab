@@ -63,7 +63,7 @@ public class SpriteAnimation : MonoBehaviour
 
                 _currentSpriteIndex = 0;
 
-                _animationsClip[index].onAnimationComplete?.Invoke();
+                _animationsClip[index].onAnimationComplete?.Invoke(1, 1);
 
                 return;
             }
@@ -75,7 +75,7 @@ public class SpriteAnimation : MonoBehaviour
             {
                 enabled = _isPlaying = false;
 
-                _animationsClip[index].onAnimationComplete?.Invoke();
+                _animationsClip[index].onAnimationComplete?.Invoke(1, 1);
 
                 _onComplete?.Invoke();
                 
@@ -122,6 +122,10 @@ public class SpriteAnimation : MonoBehaviour
         public bool loop;
         public Sprite[] sprites;
         public bool allowNext;
-        public UnityEvent onAnimationComplete;
+        public OnAnimationCompleteEvent onAnimationComplete;
     }
 }
+
+[Serializable]
+public class OnAnimationCompleteEvent : UnityEvent<int, int>
+{ }
