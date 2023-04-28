@@ -2173,6 +2173,7 @@ GameObject:
   - component: {fileID: 2117526113}
   - component: {fileID: 2117526112}
   - component: {fileID: 2117526111}
+  - component: {fileID: 2117526118}
   m_Layer: 0
   m_Name: Guard-spawner
   m_TagString: Interactable
@@ -2214,16 +2215,16 @@ MonoBehaviour:
   _onSucces:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117526114}
-        m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
-        m_MethodName: SetAnimationByName
-        m_Mode: 5
+      - m_Target: {fileID: 2117526118}
+        m_TargetAssemblyTypeName: GuardSpawnerManager, Assembly-CSharp
+        m_MethodName: OnOpen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: open
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _onFail:
@@ -2244,9 +2245,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117526112}
-        m_TargetAssemblyTypeName: RequireItemComponent, Assembly-CSharp
-        m_MethodName: Check
+      - m_Target: {fileID: 2117526118}
+        m_TargetAssemblyTypeName: GuardSpawnerManager, Assembly-CSharp
+        m_MethodName: OnInteract
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2310,18 +2311,6 @@ MonoBehaviour:
     onAnimationComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2117526111}
-          m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
-          m_MethodName: Spawn
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 2117526114}
           m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
           m_MethodName: SetAnimationByName
@@ -2332,6 +2321,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: close
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2117526118}
+          m_TargetAssemblyTypeName: GuardSpawnerManager, Assembly-CSharp
+          m_MethodName: OnCall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
   - name: close
@@ -2445,6 +2446,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117526118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117526110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3252f958ded947047b1bd3aa4f01a85d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
 --- !u!1001 &2121429692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2810,6 +2824,10 @@ PrefabInstance:
     - target: {fileID: 5043696773627288465, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043696773627288471, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
+      propertyPath: _health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
       propertyPath: m_Name
