@@ -27,9 +27,5 @@ public class ChangeAnimatorComponent : MonoBehaviour
             }
         }
         index++;
-    }
-
-    public void Test(int a, int v)
-    { }
-    
+    }    
 }
