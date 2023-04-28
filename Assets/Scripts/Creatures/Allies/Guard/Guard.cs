@@ -63,7 +63,7 @@ public class Guard : MonoBehaviour
         yield return new WaitForSeconds(_attackCooldown);
         while (_currentTarget != null)
         {
-            _animator.SetTrigger(attackKey);
+           _animator.SetTrigger(attackKey);
             yield return new WaitForSeconds(_attackCooldown);
         } 
     }

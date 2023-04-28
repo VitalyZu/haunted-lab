@@ -18,6 +18,8 @@ public class DoorManager : MonoBehaviour
 
     public void OnInteract()
     {
+        if (_door == null) return;
+
         var state = _doorAnimator.GetCurrentAnimatorStateInfo(0);
 
         if (state.IsName("open"))

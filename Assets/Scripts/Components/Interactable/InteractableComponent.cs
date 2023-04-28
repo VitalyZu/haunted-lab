@@ -7,6 +7,9 @@ public class InteractableComponent : MonoBehaviour
 {
     [SerializeField] UnityEvent _action;
 
+    private void Start()
+    {}
+
     public void Interact()
     {
         _action?.Invoke();
