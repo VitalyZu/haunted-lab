@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,8 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private int _health = 1;
     [SerializeField] private UnityEvent _onHit;
-    [SerializeField] private OnChangeHealthEvent _onChange;
     [SerializeField] private UnityEvent _onDie;
+    [SerializeField] private OnChangeHealthEvent _onChange;
 
     private void Awake()
     {
@@ -30,9 +31,10 @@ public class HealthComponent : MonoBehaviour
         {
             _onHit?.Invoke();
         }
-        _onChange?.Invoke(deltaHP);
+        _onChange?.Invoke(_health);
     }
 }
 
+[Serializable]
 public class OnChangeHealthEvent : UnityEvent<int>
 { }

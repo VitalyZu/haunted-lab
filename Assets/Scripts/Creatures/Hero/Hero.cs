@@ -50,6 +50,11 @@ public class Hero : Creature
         }
     }
 
+    public void OnHealthChanged(int currentHealth)
+    {
+        _gameSession.Data.HP.Value = currentHealth;
+    }
+
     private void OnDestroy()
     {
         _gameSession.Data.Inventory.OnChange -= OnInventoryChange;
