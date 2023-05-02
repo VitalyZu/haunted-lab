@@ -7,6 +7,7 @@ public class Hero : Creature
 {
     [SerializeField] private SpawnComponent _bulletSpawer;
     [SerializeField] private SpawnComponent _casingSpawer;
+    [SerializeField] private SpawnComponent _grenadeSpawner;
     [SerializeField] private CheckCircleOverlap _intercationCheck;
 
     private GameSession _gameSession;
@@ -37,6 +38,16 @@ public class Hero : Creature
     public void Interact()
     {
         _intercationCheck.Check();
+    }
+
+    public void Throw()
+    {
+        var grenadeCount = _gameSession.Data.Inventory.Count("grenade");
+        if (grenadeCount > 0)
+        {
+            _gameSession.Data.Inventory.RemoveItem("grenade", 1);
+            _grenadeSpawner.Spawn();
+        }
     }
 
     private void OnDestroy()

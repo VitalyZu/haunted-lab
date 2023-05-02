@@ -28,4 +28,12 @@ public class HeroInput : MonoBehaviour
             _hero.Interact();
         }
     }
+
+    public void OnThrow(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.Throw();
+        }
+    }
 }
