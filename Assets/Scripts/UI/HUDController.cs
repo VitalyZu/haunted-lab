@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
     [SerializeField] private ProgressBar _bar;
     [SerializeField] private List<ItemElement> _items;
+    [SerializeField] private Text _score;
     
     private IDisposable _healthCallback;
     private GameSession _gameSession;
@@ -20,6 +22,8 @@ public class HUDController : MonoBehaviour
 
         _gameSession.Data.Inventory.OnChange += OnInventoryChanged;
         InitItems();
+
+        HealthComponent.OnDie += OnScoreChanged;
     }
 
     private void OnHealthChanged(int oldValue, int newValue)
@@ -39,6 +43,21 @@ public class HUDController : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void OnScoreChanged(GameObject target)
+    {
+        if (target.CompareTag("Enemy"))
+        {
+            SetScore();
+        }
+    }
+
+    private void SetScore()
+    {
+        var current = int.Parse(_score.text);
+        current++;
+        _score.text = current.ToString();
     }
 
     private void InitItems()

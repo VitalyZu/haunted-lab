@@ -11,6 +11,8 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private UnityEvent _onDie;
     [SerializeField] private OnChangeHealthEvent _onChange;
 
+    public static Action<GameObject> OnDie;
+    
     private void Awake()
     {
         var heroComponent = GetComponent<Hero>();
@@ -26,6 +28,7 @@ public class HealthComponent : MonoBehaviour
         if (_health <= 0)
         {
             _onDie?.Invoke();
+            OnDie?.Invoke(gameObject);
         }
         if (deltaHP < 0)
         {
@@ -38,3 +41,4 @@ public class HealthComponent : MonoBehaviour
 [Serializable]
 public class OnChangeHealthEvent : UnityEvent<int>
 { }
+

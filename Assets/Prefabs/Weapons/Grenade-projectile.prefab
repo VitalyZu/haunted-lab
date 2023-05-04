@@ -4887,6 +4887,7 @@ GameObject:
   - component: {fileID: 2975264373364050418}
   - component: {fileID: 6963111578573405705}
   - component: {fileID: 577220343}
+  - component: {fileID: 2964617106149666552}
   m_Layer: 7
   m_Name: Grenade-projectile
   m_TagString: Projectile
@@ -5060,6 +5061,18 @@ MonoBehaviour:
     onAnimationComplete:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 2964617106149666552}
+          m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
+          m_MethodName: Spawn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 2975264373364050418}
           m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
           m_MethodName: DestroySelf
@@ -5113,3 +5126,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deltaHP: -4
+--- !u!114 &2964617106149666552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477957837155123550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5598291609432370848}
+  _prefab: {fileID: 1283533454428979405, guid: 773cb8a32360ef344bc546af2a86a221, type: 3}
+  _usePool: 0
