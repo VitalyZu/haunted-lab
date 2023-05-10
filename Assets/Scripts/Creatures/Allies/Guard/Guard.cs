@@ -23,8 +23,15 @@ public class Guard : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        
+    }
+
     public void OnEnterVision(GameObject target)
     {
+        if (!enabled) return;
+
         var obstacle = CheckObstacles(target);
         if (obstacle) return;
 
@@ -63,6 +70,7 @@ public class Guard : MonoBehaviour
         yield return new WaitForSeconds(_attackCooldown);
         while (_currentTarget != null)
         {
+            SetDirection();
            _animator.SetTrigger(attackKey);
             yield return new WaitForSeconds(_attackCooldown);
         } 
