@@ -55,12 +55,18 @@ public class Grenade : MonoBehaviour
         {
             var go = collision[i].gameObject;
             var rb = go.GetComponent<Rigidbody2D>();
+            var pd = go.GetComponent<ProbabilityDestroyedComponent>();
 
             if (rb != null)
             {
                 var direction = go.transform.position - transform.position;
                 var vector = direction.normalized * 5f;
                 rb.AddForce(vector, ForceMode2D.Impulse);
+            }
+            if (pd != null && pd.enabled)
+            {
+                pd.ForceDestroy = true;
+                pd.Check();
             }
         }
     }

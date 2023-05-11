@@ -21,6 +21,7 @@ public class EnterTriggerComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!enabled) return;
         foreach (var tag in _tags)
         {
             if (collision.gameObject.CompareTag(tag) && InitCondition)
