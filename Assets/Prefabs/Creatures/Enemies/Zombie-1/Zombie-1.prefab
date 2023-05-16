@@ -91,6 +91,7 @@ Transform:
   - {fileID: 3064637049639551664}
   - {fileID: 3064637049805024932}
   - {fileID: 6145728745210590408}
+  - {fileID: 4843435872311580419}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 727335567
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b5b511a6163ee14a86e81c84d57a826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -348,6 +349,21 @@ MonoBehaviour:
           m_StringArgument: coin
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -3966353723085928467}
+        m_TargetAssemblyTypeName: SpawnListComponent, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: blood
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3064637048336944075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +424,8 @@ MonoBehaviour:
     spawnComponent: {fileID: 0}
   - Id: coin
     spawnComponent: {fileID: 6386301908556866234}
+  - Id: blood
+    spawnComponent: {fileID: 8511669709227812625}
 --- !u!1 &3064637049639551667
 GameObject:
   m_ObjectHideFlags: 0
@@ -5453,7 +5471,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 53750655
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5485,3 +5503,50 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &9069352240204581905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4843435872311580419}
+  - component: {fileID: 8511669709227812625}
+  m_Layer: 9
+  m_Name: Blood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4843435872311580419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069352240204581905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.501, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3064637048336944082}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8511669709227812625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069352240204581905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 4843435872311580419}
+  _prefab: {fileID: 6481778220957789305, guid: 9296a4201e3e2f042bbef12ad6182e6e, type: 3}
+  _usePool: 0
