@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startName: idle
-  _frameRate: 10
+  _frameRate: 11
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
