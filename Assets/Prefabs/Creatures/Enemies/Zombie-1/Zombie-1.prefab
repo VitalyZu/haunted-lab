@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackRange: {fileID: 3064637049805024934}
+  _attackCooldown: 3
 --- !u!114 &3064637048336944074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 25600
+    m_Bits: 91136
 --- !u!114 &3064637049805024931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +592,7 @@ MonoBehaviour:
   - Hero
   - Ally
   - Ally-props
+  - Main
 --- !u!114 &3064637049805024930
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,6 +44,11 @@ public class Guard : MonoBehaviour
         }
     }
 
+    public void OnExitVision()
+    {
+        _currentTarget = null;
+    }
+
     private bool CheckObstacles(GameObject target)
     {
         var direction = target.transform.position - transform.position;

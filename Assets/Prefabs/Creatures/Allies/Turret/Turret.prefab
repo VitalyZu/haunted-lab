@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _required:
   - Id: coin
-    Value: 2
+    Value: 10
   _removeAfterUse: 1
   _onSucces:
     m_PersistentCalls:
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3abda9d267bb648a16fb8b3bacbd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
+  _health: 3
   _onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b4a0dadb9fed340b829dba8c190667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 30
+  _cost: 10
   _value: {fileID: 3612449951296177292}
 --- !u!1 &8108417857301905440
 GameObject:
@@ -753,6 +753,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8108417856740062769}
     m_Modifications:
+    - target: {fileID: 8077164858052332688, guid: d8b98842dba93684d89d07b90580c90f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077164858052332688, guid: d8b98842dba93684d89d07b90580c90f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -333464217
+      objectReference: {fileID: 0}
     - target: {fileID: 8077164858320323472, guid: d8b98842dba93684d89d07b90580c90f, type: 3}
       propertyPath: m_RootOrder
       value: 3

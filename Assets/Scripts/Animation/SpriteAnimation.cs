@@ -25,7 +25,7 @@ public class SpriteAnimation : MonoBehaviour
 
     private void Awake()
     {
-        enabled = _isParticle;
+        //enabled = _isParticle;
     }
 
     private void Start()
@@ -106,11 +106,11 @@ public class SpriteAnimation : MonoBehaviour
         }
     }
 
-    private void OnBecameInvisible()
+    private void OnBecameInvisibleFIX()
     {
         enabled = false;
     }
-    private void OnBecameVisible()
+    private void OnBecameVisibleFIX()
     {
         enabled = _isPlaying;
     }

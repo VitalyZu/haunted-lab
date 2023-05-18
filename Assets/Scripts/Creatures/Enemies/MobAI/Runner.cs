@@ -6,16 +6,21 @@ public class Runner : MonoBehaviour
 {
     //[SerializeField] GameObject _target;
     [SerializeField] LayerCheck _attackRange;
+    [SerializeField] private float _attackCooldown;
 
     private Creature _creature;
     private IEnumerator _routine;
     private static GameObject _target;
+    private BoxCollider2D _targetCollider;
 
     private void Awake()
     {
         _creature = GetComponent<Creature>();
+        
         if (_target == null)
-            _target = FindObjectOfType<Hero>().gameObject;
+            _target = FindObjectOfType<MainTarget>().gameObject;
+
+        _targetCollider = _target.GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -46,6 +51,12 @@ public class Runner : MonoBehaviour
             {
                 if (_target != null)
                 {
+                    if (!_targetCollider.enabled)
+                    {
+                        _creature.SetDirection(Vector2.zero);
+                        this.enabled = false;
+                        break;
+                    }
                     var direction = _target.transform.position - transform.position;
                     direction.y = 0;
                     _creature.SetDirection(direction.normalized);
@@ -64,7 +75,10 @@ public class Runner : MonoBehaviour
         while (_attackRange.IsTouchingLayer)
         {
             _creature.Attack();
-            yield return null;//new WaitForSeconds(_attackCooldown);
+            if (_attackRange.IsTouchingLayer)
+            {
+                yield return new WaitForSeconds(_attackCooldown);
+            }
         }
 
         StartState(Run());

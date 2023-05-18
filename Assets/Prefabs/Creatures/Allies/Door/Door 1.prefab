@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b4a0dadb9fed340b829dba8c190667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 10
+  _cost: 5
   _value: {fileID: 8240854061343675527}
 --- !u!1 &3372894170579716366
 GameObject:
@@ -292,6 +292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4893794214798575879, guid: 058a4c37b2eedf8468d781b97c00a502, type: 3}
+      propertyPath: _required.Array.data[0].Value
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a4c37b2eedf8468d781b97c00a502, type: 3}
 --- !u!114 &6429794893320113627 stripped
@@ -317,6 +321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6328820353141844919}
     m_Modifications:
+    - target: {fileID: 4586304904538045972, guid: a1e144564e6adf6438400b96c8a55e24, type: 3}
+      propertyPath: _health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4586304904538045972, guid: a1e144564e6adf6438400b96c8a55e24, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
       value: 5
@@ -499,6 +507,10 @@ PrefabInstance:
     - target: {fileID: 4893794214798575876, guid: 058a4c37b2eedf8468d781b97c00a502, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893794214798575879, guid: 058a4c37b2eedf8468d781b97c00a502, type: 3}
+      propertyPath: _required.Array.data[0].Value
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a4c37b2eedf8468d781b97c00a502, type: 3}

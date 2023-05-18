@@ -12,6 +12,7 @@ TagManager:
   - Ally-props
   - Projectile
   - Blooded
+  - Main
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Ally
   - Ally-props
   - Decorations
-  - 
+  - Main
   - 
   - 
   - 
