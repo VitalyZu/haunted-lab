@@ -6,15 +6,18 @@ public class Grenade : MonoBehaviour
 {
     [SerializeField] private float _explosionTime;
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private AudioClip _explosionClip;
 
     private Rigidbody2D _rb;
     private SpriteAnimation _animation;
     private DealHealthComponent _dealHealth;
+    private AudioSource _audio;
     public void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animation = GetComponent<SpriteAnimation>();
         _dealHealth = GetComponent<DealHealthComponent>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -32,6 +35,7 @@ public class Grenade : MonoBehaviour
     {
         _rb.freezeRotation = true;
         transform.localScale = Vector2.one * 2;
+        _audio.PlayOneShot(_explosionClip);
         _animation.SetAnimationByName("explosion");
         _particle.gameObject.SetActive(true);
         _particle.Play();

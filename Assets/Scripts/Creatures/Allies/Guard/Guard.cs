@@ -11,10 +11,13 @@ public class Guard : MonoBehaviour
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] SpawnComponent _bullet;
     [SerializeField] SpawnComponent _case;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _shoot;
 
     private GameObject _currentTarget;
     private Animator _animator;
     private Coroutine _coroutine;
+    private AudioSource _audio;
 
     private static readonly int attackKey = Animator.StringToHash("attack");
 
@@ -25,7 +28,7 @@ public class Guard : MonoBehaviour
 
     private void Start()
     {
-        
+        _audio = GetComponent<AudioSource>();
     }
 
     public void OnEnterVision(GameObject target)
@@ -83,6 +86,7 @@ public class Guard : MonoBehaviour
 
     public void SpawnBullet()
     {
+        _audio.PlayOneShot(_shoot);
         _bullet.Spawn();
         _case.Spawn();
     }

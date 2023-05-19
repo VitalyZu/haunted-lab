@@ -4888,6 +4888,7 @@ GameObject:
   - component: {fileID: 6963111578573405705}
   - component: {fileID: 577220343}
   - component: {fileID: 2964617106149666552}
+  - component: {fileID: 7927632107183319689}
   m_Layer: 7
   m_Name: Grenade-projectile
   m_TagString: Projectile
@@ -5046,6 +5047,7 @@ MonoBehaviour:
   - name: explosion
     loop: 0
     sprites:
+    - {fileID: 21300000, guid: 5e224f6fdf848204ba7d2fa737121317, type: 3}
     - {fileID: 21300000, guid: f66aadb421f67ec4b93d47f763a23d66, type: 3}
     - {fileID: 21300000, guid: 4bb2937085412e54aaa0fb4d5af6172e, type: 3}
     - {fileID: 21300000, guid: 4f706793ef0b88742a398c6c60acf9e9, type: 3}
@@ -5061,18 +5063,6 @@ MonoBehaviour:
     onAnimationComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2964617106149666552}
-          m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
-          m_MethodName: Spawn
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 2975264373364050418}
           m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
           m_MethodName: DestroySelf
@@ -5097,7 +5087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4be78bf80956f479f47791c83fcc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameObject: {fileID: 0}
+  _gameObject: {fileID: 6477957837155123550}
   _destroyAfterSec: 0.25
 --- !u!114 &6963111578573405705
 MonoBehaviour:
@@ -5113,6 +5103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionTime: 3
   _particle: {fileID: 1321957821}
+  _explosionClip: {fileID: 8300000, guid: 73e32e4ad5055184fb77c45ffeba0437, type: 3}
 --- !u!114 &577220343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5141,3 +5132,99 @@ MonoBehaviour:
   _target: {fileID: 5598291609432370848}
   _prefab: {fileID: 1283533454428979405, guid: 773cb8a32360ef344bc546af2a86a221, type: 3}
   _usePool: 0
+--- !u!82 &7927632107183319689
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477957837155123550}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1dde52561857128428a81640624ebddb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 20
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

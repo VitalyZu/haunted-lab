@@ -10,10 +10,10 @@ public class DestroyObjectComponent : MonoBehaviour
     {
         if (_gameObject != null)
         {
-            Destroy(_gameObject);
+            Destroy(_gameObject, _destroyAfterSec);
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, _destroyAfterSec);
     }
 
     public void DestroyByParticle()
@@ -27,6 +27,6 @@ public class DestroyObjectComponent : MonoBehaviour
 
     public void DestroyObject(GameObject target)
     {
-        Destroy(target);
+        Destroy(target, _destroyAfterSec);
     }
 }

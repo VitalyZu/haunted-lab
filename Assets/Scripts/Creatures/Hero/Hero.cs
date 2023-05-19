@@ -9,6 +9,8 @@ public class Hero : Creature
     [SerializeField] private SpawnComponent _casingSpawer;
     [SerializeField] private SpawnComponent _grenadeSpawner;
     [SerializeField] private CheckCircleOverlap _intercationCheck;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _shoot;
 
     private GameSession _gameSession;
 
@@ -22,6 +24,7 @@ public class Hero : Creature
 
     public void BulletSpawn()
     {
+        _audio.PlayOneShot(_shoot);
         _bulletSpawer.Spawn();
         _casingSpawer.Spawn();
     }

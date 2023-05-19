@@ -14,6 +14,7 @@ public class Creature : MonoBehaviour
 
     protected Rigidbody2D _rb;
     protected Animator _animator;
+    protected AudioSource _audio;
     private Vector2 _direction;
     protected int _pushDirection;
     private float _pushDuration = 0.2f;
@@ -35,6 +36,7 @@ public class Creature : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Update()

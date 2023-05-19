@@ -8,6 +8,7 @@ public class ZombieComponent : Creature
     [SerializeField] CheckCircleOverlap _attackCheck;
     [SerializeField] LayerCheck _attackLayerCheck;
     [SerializeField] SpawnListComponent _spawnListComponent;
+    [SerializeField] AudioClip[] _hitClips;
 
     public void PlayHitParticle()
     {
@@ -35,5 +36,11 @@ public class ZombieComponent : Creature
     public void MakeAttack()
     {
         _attackCheck.Check();
+    }
+
+    public void PlayHitSound()
+    {
+        var clipNum = Random.Range(0, _hitClips.Length);
+        _audio.PlayOneShot(_hitClips[clipNum]);
     }
 }
