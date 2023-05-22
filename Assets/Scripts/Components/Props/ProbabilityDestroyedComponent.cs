@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteAnimation))]
 [RequireComponent(typeof(EnterTriggerComponent))]
@@ -9,6 +10,8 @@ public class ProbabilityDestroyedComponent : MonoBehaviour
     [Range(0.0f, 1f)]
     [SerializeField] private float _destroyProbability;
     [SerializeField] private bool _forceDestroy = false;
+    [Space]
+    [SerializeField] private UnityEvent _onDestroy;
 
     private SpriteAnimation _animation;
     private EnterTriggerComponent _trigger;
@@ -30,6 +33,8 @@ public class ProbabilityDestroyedComponent : MonoBehaviour
             enabled = false;
             _trigger.enabled = false;
             _animation.SetAnimationByName("destroy");
+
+            _onDestroy?.Invoke();
         }
     }
 }

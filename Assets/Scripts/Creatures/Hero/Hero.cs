@@ -11,6 +11,7 @@ public class Hero : Creature
     [SerializeField] private CheckCircleOverlap _intercationCheck;
     [Header("Sounds")]
     [SerializeField] private AudioClip _shoot;
+    [SerializeField] private AudioClip _collectItem;
 
     private GameSession _gameSession;
 
@@ -35,7 +36,7 @@ public class Hero : Creature
     }
     private void OnInventoryChange(string arg0, int arg1)
     {
-        Debug.Log("CHANGED");
+        _audio.PlayOneShot(_collectItem);
     }
 
     public void Interact()
