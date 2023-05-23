@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6315409566942691745}
   - component: {fileID: 6315409566942691674}
   m_Layer: 0
-  m_Name: Table-comp-papper
+  m_Name: Table-comp-paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
