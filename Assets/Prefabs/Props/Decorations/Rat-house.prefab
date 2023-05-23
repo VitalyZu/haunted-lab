@@ -491,7 +491,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: d716bba86816d1d4599d5a101c0064ca, type: 3}
     - {fileID: 21300000, guid: e44d91d4ba61a0d4590e95cb50116ef5, type: 3}
     - {fileID: 21300000, guid: c744de1669b14bd4991cf49472294232, type: 3}
-    allowNext: 1
+    allowNext: 0
     onAnimationComplete:
       m_PersistentCalls:
         m_Calls: []
