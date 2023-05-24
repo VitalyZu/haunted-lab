@@ -8,6 +8,7 @@ public class Hero : Creature
     [SerializeField] private SpawnComponent _bulletSpawer;
     [SerializeField] private SpawnComponent _casingSpawer;
     [SerializeField] private SpawnComponent _grenadeSpawner;
+    [SerializeField] private SpawnComponent _guardSpawner;
     [SerializeField] private CheckCircleOverlap _intercationCheck;
     [Header("Sounds")]
     [SerializeField] private AudioClip _shoot;
@@ -37,6 +38,16 @@ public class Hero : Creature
     private void OnInventoryChange(string arg0, int arg1)
     {
         _audio.PlayOneShot(_collectItem);
+    }
+
+    public void SpawnGuard()
+    {
+        var grenadeCount = _gameSession.Data.Inventory.Count("coin");
+        if (grenadeCount >= 5)
+        {
+            _gameSession.Data.Inventory.RemoveItem("coin", 5);
+            _guardSpawner.Spawn();
+        }
     }
 
     public void Interact()

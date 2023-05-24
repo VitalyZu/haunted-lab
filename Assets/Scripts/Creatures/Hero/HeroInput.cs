@@ -36,4 +36,12 @@ public class HeroInput : MonoBehaviour
             _hero.Throw();
         }
     }
+
+    public void OnSpawn(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.SpawnGuard();
+        }
+    }
 }

@@ -1526,7 +1526,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: coin
-        Value: 10
+        Value: 30
       - Id: grenade
         Value: 10
 --- !u!4 &474499303

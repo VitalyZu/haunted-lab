@@ -116,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 8761758760204276796}
   m_Father: {fileID: 4049945254608378945}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1856993662634059519
 BoxCollider2D:
@@ -504,6 +504,7 @@ Transform:
   - {fileID: 4049945253696609611}
   - {fileID: 4049945254453995978}
   - {fileID: 4049945253614780702}
+  - {fileID: 8191424899231197873}
   - {fileID: 506492466218258853}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -690,6 +691,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8b7ceccb-f220-460f-8554-80368e3f5fe9
     m_ActionName: Player/Throw[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4049945254608378950}
+        m_TargetAssemblyTypeName: HeroInput, Assembly-CSharp
+        m_MethodName: OnSpawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c029bd3-c4bf-4e74-8f72-ef49c587cb0a
+    m_ActionName: Player/Spawn[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -714,6 +731,7 @@ MonoBehaviour:
   _bulletSpawer: {fileID: 4049945253696609608}
   _casingSpawer: {fileID: 4049945254453995979}
   _grenadeSpawner: {fileID: 4049945253614780703}
+  _guardSpawner: {fileID: 3791984681184705213}
   _intercationCheck: {fileID: 4049945252944539025}
   _shoot: {fileID: 8300000, guid: c9489db702bc5cf4ca5fd75427ef8b21, type: 3}
   _collectItem: {fileID: 8300000, guid: 8ed1ecf673b4faf469824af231260823, type: 3}
@@ -927,3 +945,50 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4049945254608378946}
   m_Enabled: 1
+--- !u!1 &4074646717308379241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8191424899231197873}
+  - component: {fileID: 3791984681184705213}
+  m_Layer: 10
+  m_Name: GuardSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8191424899231197873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074646717308379241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4049945254608378945}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3791984681184705213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074646717308379241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 8191424899231197873}
+  _prefab: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
+  _usePool: 0
