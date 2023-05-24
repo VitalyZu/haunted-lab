@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 5043696773627288466}
   - component: {fileID: 5043696773627288471}
   - component: {fileID: 5043696773627288464}
+  - component: {fileID: 1850525310319037527}
   - component: {fileID: 5043696773627288469}
   - component: {fileID: 5043696773627288470}
   - component: {fileID: 5043696773627288491}
@@ -591,6 +592,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.119036265, y: -0.07025087}
   m_Size: {x: 0.5277581, y: 0.85949826}
   m_Direction: 0
+--- !u!50 &1850525310319037527
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043696773627288476}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &5043696773627288469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,6 +912,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 05078d5a39af2fb49bd04f57095ffe3d, type: 3}
   - {fileID: 8300000, guid: 44eb04d9e40c46a4585881b585ae25e0, type: 3}
   - {fileID: 8300000, guid: bbeea5ae30663df44aff99025c29a37c, type: 3}
+  _playOnAwake: 0
 --- !u!82 &2169998902233328487
 AudioSource:
   m_ObjectHideFlags: 0

@@ -74,5 +74,6 @@ public class HUDController : MonoBehaviour
     {
         _healthCallback.Dispose();
         _gameSession.Data.Inventory.OnChange -= OnInventoryChanged;
+        HealthComponent.OnDie -= OnScoreChanged;
     }
 }

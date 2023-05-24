@@ -13,7 +13,7 @@ public class GameSession : MonoBehaviour
         set { _playerData = value; }
     }
 
-    private void Awake()
+    private void Start()
     {
         StartSession();
         InitModels();
