@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Runner : MonoBehaviour
     //[SerializeField] GameObject _target;
     [SerializeField] LayerCheck _attackRange;
     [SerializeField] private float _attackCooldown;
+    [SerializeField] private EnemyTreasure[] _treasures;
 
     private Creature _creature;
     private IEnumerator _routine;
@@ -82,5 +84,30 @@ public class Runner : MonoBehaviour
         }
 
         StartState(Run());
+    }
+
+    public void SpawnTreasure()
+    {
+        foreach (var item in _treasures)
+        {
+            var random = UnityEngine.Random.RandomRange(0, 100);
+            if (item.Probability > random)
+            {
+                //SpawnUtil.Spawn(item.Prefab, transform.position);
+                Pool.Instance.Get(item.Prefab, transform);
+                break;
+            }
+        }
+    }
+
+    [Serializable]
+    public class EnemyTreasure
+    {
+        [SerializeField] private GameObject _prefab;
+        [Range(0,100)]
+        [SerializeField] private float _probability;
+
+        public GameObject Prefab => _prefab;
+        public float Probability => _probability;
     }
 }

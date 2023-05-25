@@ -5555,6 +5555,18 @@ MonoBehaviour:
           m_StringArgument: blood
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6323454432704979678}
+        m_TargetAssemblyTypeName: Runner, Assembly-CSharp
+        m_MethodName: SpawnTreasure
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -5603,6 +5615,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackRange: {fileID: 4562134896306039893}
   _attackCooldown: 2.2
+  _treasures:
+  - _prefab: {fileID: 1317128813503371358, guid: a418f6b749875c14da633745ba20f23a, type: 3}
+    _probability: 50
+  - _prefab: {fileID: 8609138783857262993, guid: cc531062b04ebf748a7e197ab7190bac, type: 3}
+    _probability: 20
 --- !u!114 &8599133945221467526
 MonoBehaviour:
   m_ObjectHideFlags: 0

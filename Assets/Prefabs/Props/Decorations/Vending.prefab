@@ -447,7 +447,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - name: destroyed
-    loop: 0
+    loop: 1
     sprites:
     - {fileID: 21300000, guid: 66cb6052dc6ffff48be183d1f645cf5b, type: 3}
     - {fileID: 21300000, guid: 71113f95ff9a502459b7e577362a4f52, type: 3}

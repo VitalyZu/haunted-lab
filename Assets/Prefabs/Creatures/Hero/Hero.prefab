@@ -116,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 8761758760204276796}
   m_Father: {fileID: 4049945254608378945}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1856993662634059519
 BoxCollider2D:
@@ -505,6 +505,7 @@ Transform:
   - {fileID: 4049945254453995978}
   - {fileID: 4049945253614780702}
   - {fileID: 8191424899231197873}
+  - {fileID: 3419280473129091982}
   - {fileID: 506492466218258853}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -803,6 +804,18 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7126521799158879246}
+        m_TargetAssemblyTypeName: SpawnComponent, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4049945254608378969}
         m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
         m_MethodName: DestroySelf
@@ -994,4 +1007,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 8191424899231197873}
   _prefab: {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
+  _usePool: 0
+--- !u!1 &5311009091614033411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3419280473129091982}
+  - component: {fileID: 7126521799158879246}
+  m_Layer: 10
+  m_Name: DeadpartsSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3419280473129091982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311009091614033411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4049945254608378945}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7126521799158879246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311009091614033411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad5dc9f00ee56945a3dc9f80d1eb00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 3419280473129091982}
+  _prefab: {fileID: 6008485772231177295, guid: 77d85d050ea36ca4c965d2e07e2de479, type: 3}
   _usePool: 0
