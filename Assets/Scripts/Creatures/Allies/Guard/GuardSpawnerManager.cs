@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GuardSpawnerManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private GameObject[] _prefabs;
     private GameObject _guard;
     private SpawnComponent _spawner;
     private RequireItemComponent _require;
@@ -33,6 +33,7 @@ public class GuardSpawnerManager : MonoBehaviour
 
     public void OnCall()
     {
-        _guard = SpawnUtil.Spawn(_prefab, transform.position);
+        var index = Random.Range(0, _prefabs.Length);
+        _guard = SpawnUtil.Spawn(_prefabs[index], transform.position);
     }
 }

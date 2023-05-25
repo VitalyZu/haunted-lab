@@ -9,6 +9,7 @@ public class Hero : Creature
     [SerializeField] private SpawnComponent _casingSpawer;
     [SerializeField] private SpawnComponent _grenadeSpawner;
     [SerializeField] private SpawnComponent _guardSpawner;
+    [SerializeField] private GameObject[] _guardPrefabs;
     [SerializeField] private CheckCircleOverlap _intercationCheck;
     [Header("Sounds")]
     [SerializeField] private AudioClip _shoot;
@@ -42,11 +43,12 @@ public class Hero : Creature
 
     public void SpawnGuard()
     {
-        var grenadeCount = _gameSession.Data.Inventory.Count("coin");
-        if (grenadeCount >= 5)
+        var coinCount = _gameSession.Data.Inventory.Count("coin");
+        if (coinCount >= 5)
         {
             _gameSession.Data.Inventory.RemoveItem("coin", 5);
-            _guardSpawner.Spawn();
+            var index = UnityEngine.Random.Range(0, _guardPrefabs.Length);
+            SpawnUtil.Spawn(_guardPrefabs[index], _guardSpawner.gameObject.transform.position);
         }
     }
 
