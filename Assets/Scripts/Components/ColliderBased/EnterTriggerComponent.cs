@@ -31,7 +31,7 @@ public class EnterTriggerComponent : MonoBehaviour
                 break;
             }
         }
-        _onComplete?.Invoke(gameObject);
+        _onComplete?.Invoke(collision.gameObject);
     }
 }
 
