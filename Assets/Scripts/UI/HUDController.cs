@@ -58,6 +58,10 @@ public class HUDController : MonoBehaviour
         var current = int.Parse(_score.text);
         current++;
         _score.text = current.ToString();
+        
+        var currentScore = PlayerPrefs.GetInt("score");
+        currentScore++;
+        PlayerPrefs.SetInt("score", currentScore);
     }
 
     private void InitItems()

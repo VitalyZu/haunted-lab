@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class ZombieSpawnerManager : MonoBehaviour
 {
     [SerializeField] private ZombieSpawnerComponent[] _points;
     [SerializeField] private ZombieWaveComponent[] _waves;
+    [SerializeField] private UnityEvent _onLevelComplete;
 
     private int _currentWaveIndex = 0;
     private int _layerOrder = 1;
@@ -36,8 +38,11 @@ public class ZombieSpawnerManager : MonoBehaviour
             _waves[_currentWaveIndex].Spawn(this);
             _currentWaveIndex++;
         }
-        if (_enemiesCount <= 0)
-        { Debug.Log("END GAME"); }
+        if (_enemiesCount <= 0 && enabled)
+        {
+            _onLevelComplete?.Invoke();
+            enabled = false;
+        }
     }
 
     private void OnScoreChanged(GameObject target)

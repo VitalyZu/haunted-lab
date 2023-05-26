@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6632713149164907598}
   - component: {fileID: 8967371350400373053}
   m_Layer: 11
-  m_Name: guard-4
+  m_Name: hero-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,8 +181,9 @@ GameObject:
   - component: {fileID: 599343536589260069}
   - component: {fileID: 1410880154759859846}
   - component: {fileID: 2751710454538028713}
+  - component: {fileID: 525318311419513842}
   m_Layer: 11
-  m_Name: guard-2
+  m_Name: hero-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,6 +328,14 @@ MonoBehaviour:
   _forceDirection: {x: 0.52, y: 0.3}
   _rb: {fileID: 1410880154759859846}
   _sprite: {fileID: 2468947101856694615}
+--- !u!81 &525318311419513842
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123098914245536618}
+  m_Enabled: 1
 --- !u!1 &5222366159021418222
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +349,7 @@ GameObject:
   - component: {fileID: 7351083488765623645}
   - component: {fileID: 9128729416622165380}
   m_Layer: 11
-  m_Name: guard-1
+  m_Name: hero-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,6 +499,7 @@ GameObject:
   - component: {fileID: 8171602458246476078}
   - component: {fileID: 8807150723791153076}
   - component: {fileID: 4815445785520278533}
+  - component: {fileID: 747298686086680178}
   m_Layer: 0
   m_Name: Hero-deadparts
   m_TagString: Untagged
@@ -631,6 +641,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &747298686086680178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008485772231177295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6443c5381f040e849a2a06a456be6687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _restartDelay: 3
+  _startOnAwake: 1
+  _targetCamera: {fileID: 0}
+  _makeTransition: 0
 --- !u!1 &8388295199981886749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,7 +5608,7 @@ GameObject:
   - component: {fileID: 3201039773913861300}
   - component: {fileID: 1925650350972154663}
   m_Layer: 11
-  m_Name: guard-3
+  m_Name: hero-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
