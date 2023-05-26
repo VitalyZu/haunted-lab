@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class ZombieSpawnerComponent : MonoBehaviour
 {
     private ZombieSpawnerManager _spawnManager;
@@ -49,11 +51,11 @@ public class ZombieSpawnerComponent : MonoBehaviour
 
     private void ChangeColor(SpriteRenderer renderer)
     {
-        renderer.color = new Color(Random.Range(0.8f, 1f), Random.Range(0.8f, 1f), Random.Range(0.8f, 1f));
+        renderer.color = new Color(UnityEngine.Random.Range(0.8f, 1f), UnityEngine.Random.Range(0.8f, 1f), UnityEngine.Random.Range(0.8f, 1f));
     }
 
     private void ChangeSize(GameObject instance)
     {
-        instance.transform.localScale = new Vector3(Random.Range(0.8f, 1.2f), Random.Range(0.8f, 1.2f), 1f);
+        instance.transform.localScale = new Vector3(UnityEngine.Random.Range(0.8f, 1.2f), UnityEngine.Random.Range(0.8f, 1.2f), 1f);
     }
 }
