@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
 
     public void OnLevelComplete(int type)
     {
+        if (_levelComplete.gameObject.activeSelf) return;
         if (_hero != null)
         {
             _hero.SetDirection(Vector2.zero);
