@@ -5617,9 +5617,9 @@ MonoBehaviour:
   _attackCooldown: 2.2
   _treasures:
   - _prefab: {fileID: 1317128813503371358, guid: a418f6b749875c14da633745ba20f23a, type: 3}
-    _probability: 50
+    _probability: 30
   - _prefab: {fileID: 8609138783857262993, guid: cc531062b04ebf748a7e197ab7190bac, type: 3}
-    _probability: 20
+    _probability: 10
 --- !u!114 &8599133945221467526
 MonoBehaviour:
   m_ObjectHideFlags: 0

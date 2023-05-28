@@ -15,20 +15,20 @@ public class Creature : MonoBehaviour
     protected Rigidbody2D _rb;
     protected Animator _animator;
     protected AudioSource _audio;
-    private Vector2 _direction;
+    protected Vector2 _direction;
     protected int _pushDirection;
     private float _pushDuration = 0.2f;
     
     private bool _isAttack = false;
-    private bool _isGrounded;
+    protected bool _isGrounded;
     private bool _isJumping;
     private bool _isHit;
 
     private Coroutine _hitCoroutine;
 
-    private static readonly int runningKey = Animator.StringToHash("running");
-    private static readonly int verticalVelocityKey = Animator.StringToHash("vertical-velocity");
-    private static readonly int groundKey = Animator.StringToHash("ground");
+    protected static readonly int runningKey = Animator.StringToHash("running");
+    protected static readonly int verticalVelocityKey = Animator.StringToHash("vertical-velocity");
+    protected static readonly int groundKey = Animator.StringToHash("ground");
     private static readonly int attackKey = Animator.StringToHash("attack");
     private static readonly int hitKey = Animator.StringToHash("hit");
 
@@ -54,7 +54,7 @@ public class Creature : MonoBehaviour
         return velocity;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (!_isAttack || _isHit)
         {
@@ -75,11 +75,9 @@ public class Creature : MonoBehaviour
             _rb.velocity = Vector2.zero;
         }
 
-        float velocityForAnimator = _rb.velocity.y;
         
-        _animator.SetBool(groundKey, _isGrounded);
-        _animator.SetFloat(verticalVelocityKey, velocityForAnimator);
-        _animator.SetBool(runningKey, _direction.x != 0);
+        
+        
     }
 
     private float CalculateYVelocity()
