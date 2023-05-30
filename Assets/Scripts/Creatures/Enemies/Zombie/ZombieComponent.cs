@@ -9,6 +9,48 @@ public class ZombieComponent : Creature
     [SerializeField] LayerCheck _attackLayerCheck;
     [SerializeField] SpawnListComponent _spawnListComponent;
     [SerializeField] AudioClip[] _hitClips;
+    [SerializeField] LayerCheck _obstacleCheck;
+    //[SerializeField] float _debugVelocityTime;
+    private bool _canJump = true;
+
+    private EnterTriggerComponent _obstacleTrigger;
+    private void Start()
+    {
+        //_obstacleCheck.GetComponent<CircleCollider2D>().radius = _obstacleCheck.GetComponent<CircleCollider2D>().radius * gameObject.transform.parent.localScale.y;
+        //_obstacleTrigger = _obstacleCheck.GetComponent<EnterTriggerComponent>();
+    }
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        if (Time.frameCount % 3 == 0 && _isGrounded && _canJump)
+        {
+            RaycastHit2D[] hit = new RaycastHit2D[1];
+            //Physics2D.Raycast(_collider.bounds.center, Vector2.right * Mathf.Sign(transform.localScale.x), _collider.bounds.extents.x + 0.11f, _attackMask);
+            Physics2D.RaycastNonAlloc(_collider.bounds.center, Vector2.right * Mathf.Sign(transform.localScale.x), hit, _collider.bounds.extents.x + 0.3f, _groundMask);
+            //RaycastHit2D hit = Physics2D.Raycast(_collider.bounds.center, Vector2.right  * Mathf.Sign(transform.localScale.x), _collider.bounds.extents.x + 0.3f, _groundMask);
+            //if (hit.collider != null)
+            if(hit[0].collider != null)
+            {
+                _canJump = false;
+                _rb.AddForce(new Vector2(40f * Mathf.Sign(transform.localScale.x), 60f), ForceMode2D.Impulse);
+                float radius = _attackCheck.Radius;
+                //_attackCheck.Radius = 1f;
+                //_attackCheck.Check();
+                //_attackCheck.Radius = radius;
+                StartCoroutine(SetObstacleTrigger());
+                
+            }
+        }
+    }
+
+    private IEnumerator SetObstacleTrigger()
+    {
+        //_rb.AddForce(new Vector2(455f * Mathf.Sign(transform.localScale.x), 0f), ForceMode2D.Impulse);
+        //yield return new WaitForSeconds(_debugVelocityTime);
+        //_rb.AddForce(new Vector2(455f * Mathf.Sign(transform.localScale.x), 0f), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(1f);
+        _canJump = true;
+    }
 
     public void PlayHitParticle()
     {
@@ -32,6 +74,7 @@ public class ZombieComponent : Creature
         _hitParticle.gameObject.SetActive(true);
         _hitParticle.Play();       
     }
+
 
     public void MakeAttack()
     {

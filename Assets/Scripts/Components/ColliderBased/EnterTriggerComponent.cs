@@ -12,7 +12,10 @@ public class EnterTriggerComponent : MonoBehaviour
     [SerializeField] private OnTriggerEvent _onEnter;
     [SerializeField] private OnTriggerEvent _onComplete;
 
-
+    private void Update()
+    {
+        
+    }
 
     public bool IsSingleTrigger { get => _isSingleTrigger; set => _isSingleTrigger = value; }
     public bool InitCondition { get; set; } = true;

@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cost
       objectReference: {fileID: 0}
+    - target: {fileID: 8077164858320323473, guid: d8b98842dba93684d89d07b90580c90f, type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8077164858320323474, guid: d8b98842dba93684d89d07b90580c90f, type: 3}
       propertyPath: m_Size.x
       value: 3.7450504
@@ -323,7 +327,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4586304904538045972, guid: a1e144564e6adf6438400b96c8a55e24, type: 3}
       propertyPath: _health
-      value: 20
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4586304904538045972, guid: a1e144564e6adf6438400b96c8a55e24, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size

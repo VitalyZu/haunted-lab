@@ -6,6 +6,12 @@ public class DestroyObjectComponent : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObject;
     [SerializeField] private float _destroyAfterSec = 0f;
+    [SerializeField] private bool _onAwake;
+
+    private void Start()
+    {
+        if (_onAwake) DestroySelf();
+    }
     public void DestroySelf()
     {
         if (_gameObject != null)

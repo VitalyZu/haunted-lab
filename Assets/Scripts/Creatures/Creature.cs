@@ -9,10 +9,12 @@ public class Creature : MonoBehaviour
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _damageJumpSpeed;
     [Header("Check")]
-    [SerializeField] private LayerCheck _groundCheck;
+    //[SerializeField] private LayerCheck _groundCheck;
+    [SerializeField] protected LayerMask _groundMask;
     [Header("Spawners")]
 
     protected Rigidbody2D _rb;
+    protected CapsuleCollider2D _collider;
     protected Animator _animator;
     protected AudioSource _audio;
     protected Vector2 _direction;
@@ -37,11 +39,14 @@ public class Creature : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _audio = GetComponent<AudioSource>();
+        _collider = GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
     {
-        _isGrounded = _groundCheck.IsTouchingLayer;
+        RaycastHit2D hit = Physics2D.Raycast(_collider.bounds.center, Vector2.down, _collider.bounds.extents.y + 0.1f, _groundMask);
+        _isGrounded = hit.collider != null;//_groundCheck.IsTouchingLayer;
+        //Debug.DrawRay(_collider.bounds.center, Vector2.down * (_collider.bounds.extents.y + 0.1f));
     }
 
     private float CalculateJumpVelocity(float velocity)
@@ -62,7 +67,7 @@ public class Creature : MonoBehaviour
             float xVelocity = !_isHit ? 
                 speed : 
                 _pushDirection != 0 ? 
-                _pushDirection * Random.Range(0, 5f) :
+                _pushDirection * Random.Range(0, 3f) :
                 speed;
             float yVelocity = CalculateYVelocity();
             
@@ -75,9 +80,9 @@ public class Creature : MonoBehaviour
             _rb.velocity = Vector2.zero;
         }
 
-        
-        
-        
+        _animator.SetBool(runningKey, _direction.x != 0);
+
+
     }
 
     private float CalculateYVelocity()

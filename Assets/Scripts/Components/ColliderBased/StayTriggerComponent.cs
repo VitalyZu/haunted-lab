@@ -7,9 +7,15 @@ public class StayTriggerComponent : MonoBehaviour
     [SerializeField] private string[] _tags;
     [SerializeField] private OnTriggerEvent _onStay;
     [SerializeField] private OnTriggerEvent _onExit;
+    [SerializeField] private Guard _checkObstacles;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (_checkObstacles != null)
+        {
+            bool check = _checkObstacles.CheckObstacles(collision.gameObject);
+            if (check) return;
+        }
         foreach (var tag in _tags)
         {
             if (collision.gameObject.CompareTag(tag))
@@ -18,6 +24,7 @@ public class StayTriggerComponent : MonoBehaviour
                 break;
             }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -586,9 +586,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vision: {fileID: 0}
+  _visionMask:
+    serializedVersion: 2
+    m_Bits: 0
   _prevMask:
     serializedVersion: 2
     m_Bits: 16384
+  _visionRange: 0
   _agroTime: 0.5
   _attackCooldown: 0.4
   _bullet: {fileID: 8108417858153258268}
@@ -669,6 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObject: {fileID: 0}
   _destroyAfterSec: 0
+  _onAwake: 0
 --- !u!114 &1498349172000534328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +709,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -791,13 +796,13 @@ GameObject:
   - component: {fileID: 8108417857301905452}
   - component: {fileID: 8108417857301905453}
   - component: {fileID: 8108417857301905442}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8108417857301905443
 Transform:
   m_ObjectHideFlags: 0
@@ -890,7 +895,20 @@ MonoBehaviour:
         m_CallState: 2
   _onExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8108417856740062781}
+        m_TargetAssemblyTypeName: Guard, Assembly-CSharp
+        m_MethodName: OnExitVision
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _checkObstacles: {fileID: 0}
 --- !u!1 &8108417858137672170
 GameObject:
   m_ObjectHideFlags: 0

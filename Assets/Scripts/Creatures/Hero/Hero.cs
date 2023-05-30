@@ -30,7 +30,7 @@ public class Hero : Creature
         float velocityForAnimator = _rb.velocity.y;
         _animator.SetBool(groundKey, _isGrounded);
         _animator.SetFloat(verticalVelocityKey, velocityForAnimator);
-        _animator.SetBool(runningKey, _direction.x != 0);
+        
     }
 
     public void BulletSpawn()

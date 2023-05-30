@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3abda9d267bb648a16fb8b3bacbd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 40
   _onHit:
     m_PersistentCalls:
       m_Calls:
@@ -456,6 +456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObject: {fileID: 0}
   _destroyAfterSec: 0
+  _onAwake: 0
 --- !u!114 &826256123
 MonoBehaviour:
   m_ObjectHideFlags: 0

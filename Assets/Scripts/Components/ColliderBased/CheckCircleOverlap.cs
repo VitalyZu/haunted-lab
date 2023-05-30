@@ -13,11 +13,17 @@ public class CheckCircleOverlap : MonoBehaviour
     [SerializeField] private string[] _tags;
     private List<Collider2D> _interactResult = new List<Collider2D>();
 
+    public float Radius { get { return _radius; } set { _radius = value; } }
+
     public void Check()
     {
+        var cf = new ContactFilter2D();
+        cf.SetLayerMask(_mask);
+
         Physics2D.OverlapCircle(
             transform.position,
             _radius,
+            //cf,
              new ContactFilter2D().NoFilter(),
             _interactResult);
 

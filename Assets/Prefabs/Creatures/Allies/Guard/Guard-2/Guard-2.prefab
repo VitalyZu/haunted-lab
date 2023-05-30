@@ -10,15 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 299156046}
   - component: {fileID: 299156049}
-  - component: {fileID: 299156048}
   - component: {fileID: 299156047}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &299156046
 Transform:
   m_ObjectHideFlags: 0
@@ -47,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13368618, y: -0.0742701}
+  m_Offset: {x: -0.10676098, y: -0.0742701}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,28 +57,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0600986, y: 0.8514598}
+  m_Size: {x: 10.870552, y: 0.8514598}
   m_EdgeRadius: 0
---- !u!114 &299156048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299156045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f1162abc603d04e957cd40fe9d3303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tags: []
-  _isSingleTrigger: 0
-  _onEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &299156047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +103,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _checkObstacles: {fileID: 474031201}
 --- !u!1 &955245556
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObject: {fileID: 0}
   _destroyAfterSec: 0
+  _onAwake: 0
 --- !u!114 &474031201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,9 +674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vision: {fileID: 0}
+  _visionMask:
+    serializedVersion: 2
+    m_Bits: 512
   _prevMask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 16448
+  _visionRange: 5
   _agroTime: 0.5
   _attackCooldown: 1
   _bullet: {fileID: 1442637408}

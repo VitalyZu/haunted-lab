@@ -729,6 +729,9 @@ MonoBehaviour:
   _jumpSpeed: 18
   _damageJumpSpeed: 10
   _groundCheck: {fileID: 4049945253725414506}
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 64
   _bulletSpawer: {fileID: 4049945253696609608}
   _casingSpawer: {fileID: 4049945254453995979}
   _grenadeSpawner: {fileID: 4049945253614780703}
@@ -869,6 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameObject: {fileID: 0}
   _destroyAfterSec: 0
+  _onAwake: 0
 --- !u!82 &1604326673
 AudioSource:
   m_ObjectHideFlags: 0

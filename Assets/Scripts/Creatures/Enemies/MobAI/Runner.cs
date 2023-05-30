@@ -8,15 +8,20 @@ public class Runner : MonoBehaviour
     //[SerializeField] GameObject _target;
     [SerializeField] LayerCheck _attackRange;
     [SerializeField] private float _attackCooldown;
+    [SerializeField] private LayerMask _attackMask;
+    [SerializeField] private CapsuleCollider2D _collider;
     [SerializeField] private EnemyTreasure[] _treasures;
 
     private Creature _creature;
     private IEnumerator _routine;
     private static GameObject _target;
     private BoxCollider2D _targetCollider;
+    private bool _isAttack = false;
+    private int id;
 
     private void Awake()
     {
+        id = gameObject.GetInstanceID();
         _creature = GetComponent<Creature>();
         
         if (_target == null)
@@ -33,8 +38,12 @@ public class Runner : MonoBehaviour
     private void StartState(IEnumerator state)
     {
         _creature.SetDirection(Vector2.zero);
-        
-        if (_routine != null) StopCoroutine(_routine);
+
+        if (_routine != null)
+        {
+            StopCoroutine(_routine);
+            _routine = null;
+        }
 
         _routine = state;
         StartCoroutine(state);
@@ -42,11 +51,18 @@ public class Runner : MonoBehaviour
 
     private IEnumerator Run()
     {
-        while (enabled)
+        while (enabled && !_isAttack)
         {
-            if (_attackRange.IsTouchingLayer)
+            RaycastHit2D[] hit = new RaycastHit2D[1];
+            //Physics2D.Raycast(_collider.bounds.center, Vector2.right * Mathf.Sign(transform.localScale.x), _collider.bounds.extents.x + 0.11f, _attackMask);
+            Physics2D.RaycastNonAlloc(_collider.bounds.center, Vector2.right * Mathf.Sign(transform.localScale.x), hit, _collider.bounds.extents.x + 0.11f, _attackMask);
+            
+            if(hit[0].collider != null)
+            //if (hit.collider != null)
+            //if (_attackRange.IsTouchingLayer)
             {
                 //yield return null;
+                _isAttack = true;
                 StartState(Attack());
             }
             else
@@ -70,10 +86,12 @@ public class Runner : MonoBehaviour
             }          
             yield return null;
         }
+        yield return null;
     }
 
     private IEnumerator Attack()
     {
+        _isAttack = true;
         while (_attackRange.IsTouchingLayer)
         {
             _creature.Attack();
@@ -82,8 +100,19 @@ public class Runner : MonoBehaviour
                 yield return new WaitForSeconds(_attackCooldown);
             }
         }
-
+        _isAttack = false;
+        yield return null;
         StartState(Run());
+    }
+
+    [ContextMenu("StopAllRoute")]
+    public void StopAllRoute()
+    {
+        if (_routine != null)
+        {
+            _creature.SetDirection(Vector2.zero);
+            StopCoroutine(_routine);
+        }
     }
 
     public void SpawnTreasure()

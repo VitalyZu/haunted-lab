@@ -18,10 +18,13 @@ public class LayerCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        _isTouchingLayer = _collider.IsTouchingLayers(_groundMask);
+        //if(Time.frameCount % 3 == 0)
+            _isTouchingLayer = _collider.IsTouchingLayers(_groundMask);
     }
     private void OnTriggerExit2D(Collider2D collision)
+
     {
-        _isTouchingLayer = _collider.IsTouchingLayers(_groundMask);
+        //if (Time.frameCount % 3 == 0)
+            _isTouchingLayer = _collider.IsTouchingLayers(_groundMask);
     }
 }
