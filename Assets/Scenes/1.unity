@@ -1634,7 +1634,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &308266379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,56 +1659,56 @@ MonoBehaviour:
     _startTime: 5
     _enemiesSwpawnDelay: 0.5
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 10
     _startTime: 15
     _enemiesSwpawnDelay: 1
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 5
     _startTime: 15
     _enemiesSwpawnDelay: 1
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 15
     _startTime: 25
     _enemiesSwpawnDelay: 0.5
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 20
     _startTime: 30
     _enemiesSwpawnDelay: 1
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 5
     _startTime: 40
     _enemiesSwpawnDelay: 1
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   - _pointNumber: 0
     _randomPoint: 1
     _number: 10
     _startTime: 60
     _enemiesSwpawnDelay: 1
     _types:
-    - {fileID: 3064637048336944085, guid: 360c448826592bb4cbbbe905cb99f485, type: 3}
-    - {fileID: 7196358750163076832, guid: e1d51d0b30fd4c3468df945aa41902da, type: 3}
+    - {fileID: 3064637048336944085, guid: 94ece13e5686f274bbb364d54cbaf853, type: 3}
+    - {fileID: 3064637048336944085, guid: b4dc97197af293844ace5355eeaf3103, type: 3}
   _onLevelComplete:
     m_PersistentCalls:
       m_Calls:
@@ -2346,7 +2346,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.8359375
+  orthographic size: 3.4609375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

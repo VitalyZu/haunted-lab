@@ -316,7 +316,6 @@ GameObject:
   - component: {fileID: 8108417856740062769}
   - component: {fileID: 8108417856740062774}
   - component: {fileID: 8108417856740062775}
-  - component: {fileID: 8108417856740062771}
   - component: {fileID: 8108417856740062768}
   - component: {fileID: 8108417856740062770}
   - component: {fileID: 8108417856740062781}
@@ -325,6 +324,7 @@ GameObject:
   - component: {fileID: 5446349923564849435}
   - component: {fileID: 1498349172000534328}
   - component: {fileID: 3602498904709689880}
+  - component: {fileID: 476288298992711063}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Interactable
@@ -426,32 +426,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &8108417856740062771
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108417856740062772}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0070724487, y: -0.1367684}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.42007637, y: 0.7264632}
-  m_EdgeRadius: 0
 --- !u!114 &8108417856740062768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,11 +562,11 @@ MonoBehaviour:
   _vision: {fileID: 0}
   _visionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _prevMask:
     serializedVersion: 2
-    m_Bits: 16384
-  _visionRange: 0
+    m_Bits: 16448
+  _visionRange: 5
   _agroTime: 0.5
   _attackCooldown: 0.4
   _bullet: {fileID: 8108417858153258268}
@@ -784,6 +758,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &476288298992711063
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108417856740062772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0034592152, y: -0.041510165}
+  m_Size: {x: 0.4430766, y: 0.9169797}
+  m_Direction: 0
 --- !u!1 &8108417857301905440
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,14 +36,14 @@ public class Guard : MonoBehaviour, ICheckObstacle
         if (_currentTarget == null)
         {
             RaycastHit2D hit = RaycastVision(Vector2.right);
-            if (hit.collider != null)
+            if (hit.collider != null && !CheckObstacles(hit.collider.gameObject))
             {
                 OnEnterVision(hit.collider.gameObject);
                 return;
             }
 
             hit = RaycastVision(Vector2.left);
-            if (hit.collider != null)
+            if (hit.collider != null && !CheckObstacles(hit.collider.gameObject))
             {
                 OnEnterVision(hit.collider.gameObject);
                 return;
@@ -53,15 +53,15 @@ public class Guard : MonoBehaviour, ICheckObstacle
 
     private RaycastHit2D RaycastVision(Vector2 _direction)
     {
-        return Physics2D.Raycast(_collider.bounds.center, _direction * Mathf.Sign(transform.localScale.x), _collider.bounds.extents.x + _visionRange, _visionMask);
+        return Physics2D.Raycast(_collider.bounds.center, _direction/* * Mathf.Sign(transform.localScale.x)*/, _collider.bounds.extents.x + _visionRange, _visionMask);
     }
 
     public void OnEnterVision(GameObject target)
     {
         if (!enabled) return;
 
-        var obstacle = CheckObstacles(target);
-        if (obstacle) return;
+        //var obstacle = CheckObstacles(target);
+        //if (obstacle) return;
 
         if (_currentTarget == null)
         {
@@ -79,11 +79,20 @@ public class Guard : MonoBehaviour, ICheckObstacle
 
     public bool CheckObstacles(GameObject target)
     {
+        /*
         var direction = target.transform.position - transform.position;
         RaycastHit2D[] result = new RaycastHit2D[1];
         //Physics2D.RaycastNonAlloc(transform.position, Vector2.right * Mathf.Sign(direction.x), result, 5f, _prevMask);
         Physics2D.RaycastNonAlloc(target.transform.position, transform.position, result, Mathf.Abs(target.transform.position.x - transform.position.x) , _prevMask);
         return result[0].collider != null;
+        */
+        Vector2 direction = target.transform.position - transform.position;
+        direction = direction.normalized;
+
+        var v = direction;//new Vector2(Vector2.Dot(target.transform.position.normalized, direction.normalized), 0);
+        var hit = Physics2D.Raycast(_collider.bounds.center, v, Mathf.Abs(target.transform.position.x - transform.position.x), _prevMask);
+        Debug.DrawRay(_collider.bounds.center, v);
+        return hit.collider != null;
     }
 
     private void SetDirection()
@@ -106,10 +115,9 @@ public class Guard : MonoBehaviour, ICheckObstacle
         direction = direction.normalized;
         while (_currentTarget != null)
         {
-            var v = new Vector2(Vector2.Dot(_currentTarget.transform.position.normalized, direction.normalized), 0);
+            var v = direction;//new Vector2(Vector2.Dot(_currentTarget.transform.position.normalized, direction.normalized), 0);
             var hit = Physics2D.Raycast(_collider.bounds.center, v, _collider.bounds.extents.x + _visionRange, _visionMask + _prevMask);
-            if (hit.collider == null || hit.collider.gameObject != _currentTarget) break;
-
+            if (hit.collider == null || !hit.collider.gameObject.CompareTag("Enemy")) break;
             SetDirection();
            _animator.SetTrigger(attackKey);
             yield return new WaitForSeconds(_attackCooldown);
