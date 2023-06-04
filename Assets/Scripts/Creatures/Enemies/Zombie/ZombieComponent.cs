@@ -32,10 +32,13 @@ public class ZombieComponent : Creature
             if(hit[0].collider != null)
             {
                 _canJump = false;
-                _rb.AddForce(new Vector2(40f * Mathf.Sign(transform.localScale.x), 60f), ForceMode2D.Impulse);
+                _rb.AddForce(new Vector2(0f * Mathf.Sign(transform.localScale.x), 60f), ForceMode2D.Impulse);
                 float radius = _attackCheck.Radius;
                 //_attackCheck.Radius = 1f;
-                //_attackCheck.Check();
+                var attackPos = _attackCheck.gameObject.transform.position;
+                _attackCheck.gameObject.transform.position = new Vector3(attackPos.x, attackPos.y + .4f, attackPos.z);
+                _attackCheck.Check();
+                _attackCheck.gameObject.transform.position = attackPos;
                 //_attackCheck.Radius = radius;
                 StartCoroutine(SetObstacleTrigger());
                 

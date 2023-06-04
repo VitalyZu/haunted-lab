@@ -568,7 +568,7 @@ MonoBehaviour:
     m_Bits: 16448
   _visionRange: 5
   _agroTime: 0.5
-  _attackCooldown: 0.4
+  _attackCooldown: 0.5
   _bullet: {fileID: 8108417858153258268}
   _case: {fileID: 8108417858137672181}
   _shoot: {fileID: 8300000, guid: c9489db702bc5cf4ca5fd75427ef8b21, type: 3}

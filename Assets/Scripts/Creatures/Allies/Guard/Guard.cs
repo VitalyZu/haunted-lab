@@ -111,6 +111,9 @@ public class Guard : MonoBehaviour, ICheckObstacle
     private IEnumerator Attack()
     {
         yield return new WaitForSeconds(_agroTime);
+
+        if (_currentTarget == null) yield break;
+
         Vector2 direction = _currentTarget.transform.position - transform.position;
         direction = direction.normalized;
         while (_currentTarget != null)
@@ -131,6 +134,14 @@ public class Guard : MonoBehaviour, ICheckObstacle
         _audio.PlayOneShot(_shoot);
         _bullet.Spawn();
         _case.Spawn();
+    }
+
+    public void StopAllRoute()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
     }
 }
 

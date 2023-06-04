@@ -680,7 +680,7 @@ MonoBehaviour:
   _prevMask:
     serializedVersion: 2
     m_Bits: 16448
-  _visionRange: 5
+  _visionRange: 4
   _agroTime: 0.5
   _attackCooldown: 1
   _bullet: {fileID: 1442637408}

@@ -9,7 +9,9 @@ public class HUDController : MonoBehaviour
     [SerializeField] private ProgressBar _bar;
     [SerializeField] private List<ItemElement> _items;
     [SerializeField] private Text _score;
-    
+
+
+    private int _scoreValue = 0;
     private IDisposable _healthCallback;
     private GameSession _gameSession;
 
@@ -55,10 +57,12 @@ public class HUDController : MonoBehaviour
 
     private void SetScore()
     {
-        var current = int.Parse(_score.text);
-        current++;
-        _score.text = current.ToString();
-        
+        //var current = int.Parse(_score.text);
+        //current++;
+        //_score.text = current.ToString();
+        _scoreValue++;
+        _score.text = _scoreValue.ToString();
+
         var currentScore = PlayerPrefs.GetInt("score");
         currentScore++;
         PlayerPrefs.SetInt("score", currentScore);

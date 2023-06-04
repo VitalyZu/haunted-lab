@@ -12,10 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/HUD.unity
     guid: 2b0737e17343f4546bc9af6b03b0e8d1
   - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: b07c261c5f3ab264cb0cfaeccb7495df
+  - enabled: 1
     path: Assets/Scenes/1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/3.unity
+    path: Assets/Scenes/2.unity
     guid: d59b008cbb0a71a4c85b6181e5985d92
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 35050d3f2238f88409c4f10a4c9585c8, type: 2}

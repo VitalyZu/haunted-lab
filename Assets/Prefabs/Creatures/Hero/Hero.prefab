@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0f485bbeb08463c438c84b800e0c4234, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: d160ee36e2c61ad4ba3e725ebc1021d3, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -624,26 +624,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4049945254608378950}
-        m_TargetAssemblyTypeName: HeroInput, Assembly-CSharp
-        m_MethodName: OnHorizontalMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2777fec6-bbe5-4909-b474-00a817208035
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 03d828e7-7db9-473c-9816-11ce94ea4c11
-    m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4049945254608378950}
@@ -708,7 +688,23 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6c029bd3-c4bf-4e74-8f72-ef49c587cb0a
     m_ActionName: Player/Spawn[/Keyboard/r]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4049945254608378950}
+        m_TargetAssemblyTypeName: HeroInput, Assembly-CSharp
+        m_MethodName: OnHorizontalMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2777fec6-bbe5-4909-b474-00a817208035
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -728,7 +724,6 @@ MonoBehaviour:
   _speed: 5
   _jumpSpeed: 18
   _damageJumpSpeed: 10
-  _groundCheck: {fileID: 4049945253725414506}
   _groundMask:
     serializedVersion: 2
     m_Bits: 64

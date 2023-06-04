@@ -34,6 +34,9 @@ public class Creature : MonoBehaviour
     private static readonly int attackKey = Animator.StringToHash("attack");
     private static readonly int hitKey = Animator.StringToHash("hit");
 
+    public float Speed { get => _speed; set => _speed = value; }
+    public float PushDuration { get => _pushDuration; set => _pushDuration = value; }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -63,20 +66,21 @@ public class Creature : MonoBehaviour
     {
         if (!_isAttack || _isHit)
         {
-            var speed = _direction.x * _speed;
+            var speed = _direction.x * Speed;
             float xVelocity = !_isHit ? 
                 speed : 
                 _pushDirection != 0 ? 
                 _pushDirection * Random.Range(0, 3f) :
                 speed;
             float yVelocity = CalculateYVelocity();
-            
+
             _rb.velocity = new Vector2(xVelocity, yVelocity);
 
             if (_direction.x != 0) SetSpriteDirection(_direction);
         }
         else
         {
+            Debug.Log("???");
             _rb.velocity = Vector2.zero;
         }
 
@@ -147,7 +151,7 @@ public class Creature : MonoBehaviour
 
     private IEnumerator HitCoroutine()
     {
-        yield return new WaitForSeconds(_pushDuration);
+        yield return new WaitForSeconds(PushDuration);
         _isHit = false;
         _hitCoroutine = null;
     }

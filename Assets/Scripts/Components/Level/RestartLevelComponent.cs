@@ -8,7 +8,7 @@ public class RestartLevelComponent : MonoBehaviour
     public void Restart()
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
-        int index = Random.Range(2, sceneCount);
+        int index = Random.Range(3, sceneCount);
         SceneManager.LoadScene(index);
     }
 }

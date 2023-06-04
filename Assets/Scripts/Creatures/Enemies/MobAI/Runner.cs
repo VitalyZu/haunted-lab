@@ -18,6 +18,7 @@ public class Runner : MonoBehaviour
     private BoxCollider2D _targetCollider;
     private bool _isAttack = false;
     private int id;
+    private bool _canSpeedBoost = true;
 
     private void Awake()
     {
@@ -77,6 +78,20 @@ public class Runner : MonoBehaviour
                     }
                     var direction = _target.transform.position - transform.position;
                     direction.y = 0;
+
+                    var random = UnityEngine.Random.RandomRange(0, 100);
+                    if (20 > random && _canSpeedBoost)
+                    {
+                        _canSpeedBoost = false;
+                        StartCoroutine(BoostSpeed());
+                    }
+                    else if(_canSpeedBoost)
+                    {
+                        _canSpeedBoost = false;
+                        StartCoroutine(RefreshBoostSpeed());
+
+                    }
+
                     _creature.SetDirection(direction.normalized);
                 }
                 else 
@@ -87,6 +102,28 @@ public class Runner : MonoBehaviour
             yield return null;
         }
         yield return null;
+    }
+
+    private IEnumerator BoostSpeed()
+    {
+        var speed = _creature.Speed;
+        var pushDuration = _creature.PushDuration;
+        
+        _creature.Speed = 2;
+        _creature.PushDuration = 0.05f;
+
+        yield return new WaitForSeconds(3f);
+
+        _creature.Speed = speed;
+        _creature.PushDuration = pushDuration;
+
+        StartCoroutine(RefreshBoostSpeed());
+    }
+
+    private IEnumerator RefreshBoostSpeed()
+    {
+        yield return new WaitForSeconds(3f);
+        _canSpeedBoost = true;
     }
 
     private IEnumerator Attack()
