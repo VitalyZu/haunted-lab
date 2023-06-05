@@ -80,7 +80,6 @@ public class Creature : MonoBehaviour
         }
         else
         {
-            Debug.Log("???");
             _rb.velocity = Vector2.zero;
         }
 

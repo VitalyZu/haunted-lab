@@ -11,6 +11,7 @@ public class Hero : Creature
     [SerializeField] private SpawnComponent _guardSpawner;
     [SerializeField] private GameObject[] _guardPrefabs;
     [SerializeField] private CheckCircleOverlap _intercationCheck;
+    [SerializeField] private LayerCheck _groundCheck;
     [Header("Sounds")]
     [SerializeField] private AudioClip _shoot;
     [SerializeField] private AudioClip _collectItem;
@@ -22,6 +23,11 @@ public class Hero : Creature
         _gameSession = FindObjectOfType<GameSession>();
 
         _gameSession.Data.Inventory.OnChange += OnInventoryChange;
+    }
+
+    private void Update()
+    {
+        _isGrounded = _groundCheck.IsTouchingLayer;
     }
 
     override protected void FixedUpdate()
@@ -63,6 +69,11 @@ public class Hero : Creature
     public void Interact()
     {
         _intercationCheck.Check();
+    }
+
+    public void PowerUp(GameObject powered)
+    {
+        _bulletSpawer.SetPrefab(powered);
     }
 
     public void Throw()

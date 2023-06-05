@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 4049945253725414504}
   - component: {fileID: 4049945253725414507}
   - component: {fileID: 4049945253725414506}
-  m_Layer: 8
+  m_Layer: 19
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4049945253725414485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.434, z: 0}
+  m_LocalPosition: {x: -0.019, y: -0.434, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -395,9 +395,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03212905, y: -0.043150157}
   serializedVersion: 2
-  m_Radius: 0.26
+  m_Radius: 0.22669435
 --- !u!114 &4049945253725414506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +735,7 @@ MonoBehaviour:
   - {fileID: 5043696773627288476, guid: 0b7dcfc86ff4ef64a9f408008b69a8ea, type: 3}
   - {fileID: 5043696773627288476, guid: b338b56cd77b4144f8968d926834377b, type: 3}
   _intercationCheck: {fileID: 4049945252944539025}
+  _groundCheck: {fileID: 4049945253725414506}
   _shoot: {fileID: 8300000, guid: c9489db702bc5cf4ca5fd75427ef8b21, type: 3}
   _collectItem: {fileID: 8300000, guid: 8ed1ecf673b4faf469824af231260823, type: 3}
 --- !u!114 &4049945254608378950

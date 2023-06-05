@@ -9,6 +9,12 @@ public class RestartLevelComponent : MonoBehaviour
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
         int index = Random.Range(3, sceneCount);
+        StartCoroutine(LoadLevel(index));    
+    }
+
+    private IEnumerator LoadLevel(int index)
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(index);
     }
 }

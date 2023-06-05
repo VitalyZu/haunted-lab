@@ -10,14 +10,13 @@ public class ZombieComponent : Creature
     [SerializeField] SpawnListComponent _spawnListComponent;
     [SerializeField] AudioClip[] _hitClips;
     [SerializeField] LayerCheck _obstacleCheck;
-    //[SerializeField] float _debugVelocityTime;
+
     private bool _canJump = true;
 
     private EnterTriggerComponent _obstacleTrigger;
     private void Start()
     {
-        //_obstacleCheck.GetComponent<CircleCollider2D>().radius = _obstacleCheck.GetComponent<CircleCollider2D>().radius * gameObject.transform.parent.localScale.y;
-        //_obstacleTrigger = _obstacleCheck.GetComponent<EnterTriggerComponent>();
+        Speed += Random.Range(-0.1f, 0.1f);
     }
     protected override void FixedUpdate()
     {
