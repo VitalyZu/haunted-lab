@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "cb06105d-6114-47a4-8d78-12f20d3f252f",
                     "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -143,7 +143,7 @@
                 {
                     "name": "Keyboard",
                     "id": "d8ae265b-317c-42d9-bacd-adf8838813d7",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -198,7 +198,7 @@
                 {
                     "name": "Arrows",
                     "id": "665d16ee-8475-4d7c-bc2c-feee0af8772a",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -255,7 +255,7 @@
                     "id": "f5dd6527-6fa5-4c3e-bb68-108ecdf2ed39",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "NormalizeVector2",
+                    "processors": "StickDeadzone(min=0.4),ScaleVector2(y=0.01)",
                     "groups": "",
                     "action": "HorizontalMovement",
                     "isComposite": false,

@@ -12,6 +12,9 @@ public class HeroInput : MonoBehaviour
     public void OnHorizontalMovement(InputAction.CallbackContext context)
     {
         Vector2 direction = context.ReadValue<Vector2>();
+        Debug.Log(direction);
+        if (direction.y < .45f)
+            direction = new Vector2(direction.x, 0);
         _hero.SetDirection(direction);
     }
 
