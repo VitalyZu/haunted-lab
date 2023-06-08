@@ -2458,6 +2458,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2500,7 +2501,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.4609375
+  orthographic size: 3.1171875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2621,6 +2622,33 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dde11d6095a354cb7db98007dc566b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1641728093}
+        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &533670722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315409566942691749, guid: ba95efd51ad2cdf41918b0b5c7ec3d42, type: 3}
@@ -21395,7 +21423,6 @@ GameObject:
   - component: {fileID: 766856639}
   - component: {fileID: 766856641}
   - component: {fileID: 766856640}
-  - component: {fileID: 766856642}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -21463,18 +21490,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766856638}
   m_CullTransparentMesh: 1
---- !u!114 &766856642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766856638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5055dfdb4634b2d40a415708d801c313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &789639810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315409566942691749, guid: dd769fd9dd70c12488659baf26a06699, type: 3}
@@ -23726,9 +23741,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 766856642}
-        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 519420037}
+        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
+        m_MethodName: RequestInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24432,6 +24447,7 @@ GameObject:
   - component: {fileID: 1641728092}
   - component: {fileID: 1641728091}
   - component: {fileID: 1641728090}
+  - component: {fileID: 1641728093}
   m_Layer: 5
   m_Name: RestartLevel
   m_TagString: Untagged
@@ -24516,9 +24532,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 766856642}
-        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 519420037}
+        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
+        m_MethodName: RequestInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24566,6 +24582,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641728088}
   m_CullTransparentMesh: 1
+--- !u!114 &1641728093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641728088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5055dfdb4634b2d40a415708d801c313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1658053454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315409566942691749, guid: 3a5e9402277d460499e750e5c91d228a, type: 3}

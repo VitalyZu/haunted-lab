@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class RestartLevelComponent : MonoBehaviour
@@ -15,6 +16,7 @@ public class RestartLevelComponent : MonoBehaviour
     private IEnumerator LoadLevel(int index)
     {
         yield return new WaitForSeconds(0.5f);
+
         SceneManager.LoadScene(index);
     }
 }

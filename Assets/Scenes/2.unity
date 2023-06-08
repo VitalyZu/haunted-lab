@@ -2709,6 +2709,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2751,7 +2752,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.4609375
+  orthographic size: 3.8359375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2872,6 +2873,33 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dde11d6095a354cb7db98007dc566b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 703453989}
+        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &537539954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315409566942691749, guid: 8d34540a1b1fbde4d97496e1a2ed76f0, type: 3}
@@ -3623,6 +3651,7 @@ GameObject:
   - component: {fileID: 703453988}
   - component: {fileID: 703453987}
   - component: {fileID: 703453986}
+  - component: {fileID: 703453989}
   m_Layer: 5
   m_Name: RestartLevel
   m_TagString: Untagged
@@ -3707,9 +3736,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 766856642}
-        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 519420037}
+        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
+        m_MethodName: RequestInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3757,6 +3786,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703453984}
   m_CullTransparentMesh: 1
+--- !u!114 &703453989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703453984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5055dfdb4634b2d40a415708d801c313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712324184
 GameObject:
   m_ObjectHideFlags: 0
@@ -18613,7 +18654,6 @@ GameObject:
   - component: {fileID: 766856639}
   - component: {fileID: 766856641}
   - component: {fileID: 766856640}
-  - component: {fileID: 766856642}
   m_Layer: 5
   m_Name: LevelComplete
   m_TagString: Untagged
@@ -18681,18 +18721,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766856638}
   m_CullTransparentMesh: 1
---- !u!114 &766856642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766856638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5055dfdb4634b2d40a415708d801c313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &786921173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21546,9 +21574,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 766856642}
-        m_TargetAssemblyTypeName: RestartLevelComponent, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 519420037}
+        m_TargetAssemblyTypeName: InterstitialAd, Assembly-CSharp
+        m_MethodName: RequestInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
