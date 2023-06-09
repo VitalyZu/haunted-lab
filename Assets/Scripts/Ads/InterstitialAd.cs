@@ -14,6 +14,10 @@ public class InterstitialAd : MonoBehaviour
 
     public void RequestInterstitial()
     {
+#if UNITY_EDITOR
+        _callback?.Invoke();
+#endif
+#if ANDROID_BUILD
         string adUnitId = "R-M-2429645-1";
 
         if (interstitial != null)
@@ -36,6 +40,9 @@ public class InterstitialAd : MonoBehaviour
         interstitial.OnInterstitialFailedToShow += HandleInterstitialFailedToShow;
 
         interstitial.LoadAd(request);
+#else
+        _callback?.Invoke();
+#endif
     }
 
     private void ShowInterstitial()

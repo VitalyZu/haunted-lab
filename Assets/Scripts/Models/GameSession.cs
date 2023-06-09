@@ -29,7 +29,7 @@ public class GameSession : MonoBehaviour
         SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
         
         //if(SceneManager.GetSceneByName("Controls") != null)
-            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
     private void InitModels()
